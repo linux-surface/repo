@@ -3,7 +3,7 @@ name: Stage updates
 on:
   push:
     branches:
-      autoupd/staging-*
+      u/staging-*
 
 jobs:
   merge:
@@ -13,7 +13,7 @@ jobs:
     - name: Stage updates
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH_STAGING: autoupd/staging
+        BRANCH_STAGING: u/staging
         NUM_TRIES: 10
         RETRY_SLEEP: 30
       run: |
