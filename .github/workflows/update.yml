@@ -6,16 +6,21 @@ on:
 
   repository_dispatch:
 
+env:
+  TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
+  BRANCH_HOLD: autoupd/hold
+  BRANCH_CURRENT: autoupd/current
+  BRANCH_STAGING: autoupd/staging
+  BRANCH_REPO: autoupd/master
+  GPG_KEY: ${{ secrets.SURFACE_GPG_KEY }}
+  GPG_KEY_ID: 56C464BAAC421453
+
 jobs:
   hold-staging:
     name: Hold current staging state
     runs-on: ubuntu-latest
     steps:
     - name: Hold current staging state
-      env:
-        TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
-        BRANCH_STAGING: autoupd/staging
-        BRANCH_HOLD: autoupd/hold
       run: |
         repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
@@ -43,14 +48,6 @@ jobs:
     container: archlinux
     steps:
     - name: Update repository
-      env:
-        TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
-        BRANCH_HOLD: autoupd/hold
-        BRANCH_CURRENT: autoupd/current
-        BRANCH_STAGING: autoupd/staging
-        BRANCH_REPO: autoupd/master
-        GPG_KEY: ${{ secrets.SURFACE_GPG_KEY }}
-        GPG_KEY_ID: 56C464BAAC421453
       run: |
         repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
@@ -196,13 +193,6 @@ jobs:
     container: debian:sid
     steps:
     - name: Update repository
-      env:
-        TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
-        BRANCH_HOLD: autoupd/hold
-        BRANCH_CURRENT: autoupd/current
-        BRANCH_STAGING: autoupd/staging
-        BRANCH_REPO: autoupd/master
-        GPG_KEY: ${{ secrets.SURFACE_GPG_KEY }}
       run: |
         repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
@@ -360,14 +350,6 @@ jobs:
     container: fedora:30
     steps:
     - name: Update repository
-      env:
-        TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
-        BRANCH_HOLD: autoupd/hold
-        BRANCH_CURRENT: autoupd/current
-        BRANCH_STAGING: autoupd/staging
-        BRANCH_REPO: autoupd/master
-        GPG_KEY: ${{ secrets.SURFACE_GPG_KEY }}
-        GPG_KEY_ID: 56C464BAAC421453
       run: |
         repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
@@ -507,14 +489,6 @@ jobs:
     container: fedora:31
     steps:
     - name: Update repository
-      env:
-        TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
-        BRANCH_HOLD: autoupd/hold
-        BRANCH_CURRENT: autoupd/current
-        BRANCH_STAGING: autoupd/staging
-        BRANCH_REPO: autoupd/master
-        GPG_KEY: ${{ secrets.SURFACE_GPG_KEY }}
-        GPG_KEY_ID: 56C464BAAC421453
       run: |
         repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
@@ -653,10 +627,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Update current branch
-      env:
-        TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
-        BRANCH_HOLD: autoupd/hold
-        BRANCH_CURRENT: autoupd/current
       run: |
         repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
