@@ -101,7 +101,9 @@ jobs:
 
         # update repo
         echo "==> Updating repo"
-        repo-add -n -R linux-surface.db.tar.gz *.pkg.tar.zst
+        files=$(find . -name '*.pkg.tar.zst' | sort -V)
+        files=(${files})
+        repo-add -n -R linux-surface.db.tar.gz ${files[@]}
 
         # remove blob files without binary
         for blob in $(find . -name '*.blob'); do
