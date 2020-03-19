@@ -348,6 +348,8 @@ jobs:
     needs: [hold-staging]
     runs-on: ubuntu-latest
     container: fedora:30
+    env:
+      FEDORA: 30
     steps:
     - name: Update repository
       run: |
@@ -373,7 +375,7 @@ jobs:
 
         # check for changs, exit if there's nothing to do
         echo "==> Checking for changes"
-        diff -arq "${path_staging}/fedora/f30" "${path_current}/fedora/f30" && exit 0
+        diff -arq "${path_staging}/fedora/f${FEDORA}" "${path_current}/fedora/f${FEDORA}" && exit 0
         echo "==> Changes detected: continuing"
 
         # set git identity
@@ -387,11 +389,11 @@ jobs:
         # clone repo branch
         echo "==> Cloning package repository"
         git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
-        cd "${path_repo}/fedora/f30"
+        cd "${path_repo}/fedora/${FEDORA}"
 
         # copy blob files
         echo "==> Updating blobs"
-        cp "${path_staging}/fedora/f30/"* .
+        cp "${path_staging}/fedora/${FEDORA}/"* .
 
         # download blob files, ignore ones that are not present any more
         echo "==> Downloading blobs"
@@ -462,11 +464,11 @@ jobs:
 
         # find and remove outdated blobs and signatures (no binary data)
         echo "==> Looking for outdated blobs"
-        cd "${path_staging}/fedora/f30"
+        cd "${path_staging}/fedora/${FEDORA}"
 
         for blob in $(find . -name '*.blob'); do
           file="${blob%.blob}"
-          if [ ! -f "${path_repo}/fedora/f30/${file}" ]; then
+          if [ ! -f "${path_repo}/fedora/${FEDORA}/${file}" ]; then
             rm -f "${blob}"
           fi
         done
@@ -487,6 +489,8 @@ jobs:
     needs: [hold-staging]
     runs-on: ubuntu-latest
     container: fedora:31
+    env:
+      FEDORA: 31
     steps:
     - name: Update repository
       run: |
@@ -512,7 +516,7 @@ jobs:
 
         # check for changs, exit if there's nothing to do
         echo "==> Checking for changes"
-        diff -arq "${path_staging}/fedora/f31" "${path_current}/fedora/f31" && exit 0
+        diff -arq "${path_staging}/fedora/${FEDORA}" "${path_current}/fedora/${FEDORA}" && exit 0
         echo "==> Changes detected: continuing"
 
         # set git identity
@@ -526,11 +530,11 @@ jobs:
         # clone repo branch
         echo "==> Cloning package repository"
         git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
-        cd "${path_repo}/fedora/f31"
+        cd "${path_repo}/fedora/${FEDORA}"
 
         # copy blob files
         echo "==> Updating blobs"
-        cp "${path_staging}/fedora/f31/"* .
+        cp "${path_staging}/fedora/${FEDORA}/"* .
 
         # download blob files, ignore ones that are not present any more
         echo "==> Downloading blobs"
@@ -601,11 +605,11 @@ jobs:
 
         # find and remove outdated blobs and signatures (no binary data)
         echo "==> Looking for outdated blobs"
-        cd "${path_staging}/fedora/f31"
+        cd "${path_staging}/fedora/${FEDORA}"
 
         for blob in $(find . -name '*.blob'); do
           file="${blob%.blob}"
-          if [ ! -f "${path_repo}/fedora/f31/${file}" ]; then
+          if [ ! -f "${path_repo}/fedora/${FEDORA}/${file}" ]; then
             rm -f "${blob}"
           fi
         done
