@@ -58,6 +58,7 @@ jobs:
 
         # install dependencies for precheck
         echo "==> Installing pre-check dependencies"
+        pacman -Syu --noconfirm
         pacman -Sy --noconfirm git diffutils
 
         # fetch 'staging' and 'current' branch
