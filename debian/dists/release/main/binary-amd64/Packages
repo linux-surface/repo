@@ -1,0 +1,2203 @@
+Package: iptsd
+Version: 0.3.1-1
+Architecture: amd64
+Maintainer: Dorian Stoll <dorian.stoll@tmsp.io>
+Installed-Size: 89
+Depends: systemd, udev, libinih1
+Priority: optional
+Section: misc
+Filename: pool/main/i/iptsd/iptsd_0.3.1-1_amd64.deb
+Size: 20940
+SHA256: c9ad3a45a4995d6bfc48c8727542466b5bcd1b3566772e52795c66d9631c36d3
+SHA1: 3b651351348ad77b13c24834b5d7db5cc00736cf
+MD5sum: 84b66fed34c65a54f8ae192363593137
+Description: Userspace daemon for Intel Precise Touch & Stylus
+
+Package: libwacom-surface
+Version: 1.7-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 921
+Depends: libc6 (>= 2.8), libglib2.0-0 (>= 2.24.0), libgudev-1.0-0 (>= 146)
+Conflicts: libwacom-bin, libwacom-common, libwacom-dev, libwacom2
+Replaces: libwacom-bin, libwacom-common, libwacom-dev, libwacom2
+Provides: libwacom-bin (= 1.7-1), libwacom-common (= 1.7-1), libwacom-dev (= 1.7-1), libwacom2 (= 1.7-1)
+Priority: optional
+Section: libs
+Filename: pool/main/libw/libwacom-surface/libwacom-surface_1.7-1_amd64.deb
+Size: 82452
+SHA256: 322436e7e61dc6ba6154c388decfd17550aae80a98f8be110cbd2962971a57a0
+SHA1: 8ba4448e6b1c6bc91b3aa4b5d26bc78d4fd5e968
+MD5sum: 265507a6554fd3f671bd5cb61d5b142d
+Description: Wacom model feature query library
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a built-in
+ on-screen tablet", "what is the size of this model", etc.
+
+Package: linux-headers-4.19.131-surface-lts
+Source: linux-4.19.131-surface-lts
+Version: 4.19.131-surface-lts-3
+Architecture: amd64
+Maintainer: root <root@3d7a6db8569c>
+Installed-Size: 74411
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.131-surface-lts/linux-headers-4.19.131-surface-lts_4.19.131-surface-lts-3_amd64.deb
+Size: 11043118
+SHA256: cc2a10c223c7196b24da91ab97dbcaa3a49e627be31665b285a28e0cd8b91794
+SHA1: 9d2d75c12ecb12c7a11be931071c7f3a78000b00
+MD5sum: 176791d231efbda4640eabaa995e5e1b
+Description: Linux kernel headers for 4.19.131-surface-lts on amd64
+ This package provides kernel header files for 4.19.131-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.132-surface-lts
+Source: linux-4.19.132-surface-lts
+Version: 4.19.132-surface-lts-2
+Architecture: amd64
+Maintainer: root <root@025ad2357872>
+Installed-Size: 74412
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.132-surface-lts/linux-headers-4.19.132-surface-lts_4.19.132-surface-lts-2_amd64.deb
+Size: 11043090
+SHA256: b9d34c82598ba19d1f939583b60966e31670f92eeb16b1c437e6136554703059
+SHA1: 43144659220f50705e8d3636a97d51594a2b8396
+MD5sum: 7ee881b101e050c33fd3d3df3b2aeadf
+Description: Linux kernel headers for 4.19.132-surface-lts on amd64
+ This package provides kernel header files for 4.19.132-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.133-surface-lts
+Source: linux-4.19.133-surface-lts
+Version: 4.19.133-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@e1309a9e9567>
+Installed-Size: 74345
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.133-surface-lts/linux-headers-4.19.133-surface-lts_4.19.133-surface-lts-1_amd64.deb
+Size: 11035446
+SHA256: 65fda33a22b19f6dadfad8056f7a119c5771330c56d2b02d8de615b2102cf745
+SHA1: 27980d400b62184b3128e96a9fe4c384b39e685c
+MD5sum: 37017b0e822998ab796474e54368b1e4
+Description: Linux kernel headers for 4.19.133-surface-lts on amd64
+ This package provides kernel header files for 4.19.133-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.134-surface-lts
+Source: linux-4.19.134-surface-lts
+Version: 4.19.134-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@2c515bd90b22>
+Installed-Size: 74349
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.134-surface-lts/linux-headers-4.19.134-surface-lts_4.19.134-surface-lts-1_amd64.deb
+Size: 11035846
+SHA256: bdcbf57adc2d2e4561a7075e488eeb801073a765c8936d6318fb48b6a2c1f28f
+SHA1: 4b90b7497b92dd7aae264b7dffd3aaee6da4d994
+MD5sum: f1cb97f7c6067bd1187c0b10abee061c
+Description: Linux kernel headers for 4.19.134-surface-lts on amd64
+ This package provides kernel header files for 4.19.134-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.135-surface-lts
+Source: linux-4.19.135-surface-lts
+Version: 4.19.135-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@76c202ba56d9>
+Installed-Size: 74349
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.135-surface-lts/linux-headers-4.19.135-surface-lts_4.19.135-surface-lts-1_amd64.deb
+Size: 11034066
+SHA256: d95be1a065aaf55bb64cc005e9ef3bbf3f82ebf5dc307087dfb7372318db1707
+SHA1: 78232b5839882524bcaa16802e883fed54f0053e
+MD5sum: 08352e670e83f7ba82500ecc06dd9c2e
+Description: Linux kernel headers for 4.19.135-surface-lts on amd64
+ This package provides kernel header files for 4.19.135-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.136-surface-lts
+Source: linux-4.19.136-surface-lts
+Version: 4.19.136-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@2e9d6e64cd1d>
+Installed-Size: 74349
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.136-surface-lts/linux-headers-4.19.136-surface-lts_4.19.136-surface-lts-1_amd64.deb
+Size: 11035454
+SHA256: fa0919cc9ddc656c83eafb5ffe0300f918e33b76e4d73f75251ce69a51361b5b
+SHA1: d17dce44b118531dfa4747496368d17cac4c50b0
+MD5sum: 68e236f4b261b1eb46e7178732fdb4ea
+Description: Linux kernel headers for 4.19.136-surface-lts on amd64
+ This package provides kernel header files for 4.19.136-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.139-surface-lts
+Source: linux-4.19.139-surface-lts
+Version: 4.19.139-surface-lts-2
+Architecture: amd64
+Maintainer: root <root@6ec12edd4c3f>
+Installed-Size: 74440
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.139-surface-lts/linux-headers-4.19.139-surface-lts_4.19.139-surface-lts-2_amd64.deb
+Size: 11053106
+SHA256: 8fcd7c61450061863af0159e861509e24231b998b25d2884de8180a74493ebd7
+SHA1: c4828d4634c02e19c3182355f6d372a4d22f1fce
+MD5sum: a14610b664f111e8577b5f941cee6135
+Description: Linux kernel headers for 4.19.139-surface-lts on amd64
+ This package provides kernel header files for 4.19.139-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.141-surface-lts
+Source: linux-4.19.141-surface-lts
+Version: 4.19.141-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@fccda39deeab>
+Installed-Size: 74445
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.141-surface-lts/linux-headers-4.19.141-surface-lts_4.19.141-surface-lts-1_amd64.deb
+Size: 11050314
+SHA256: 8735ea9573da6be9ad6a334160f2f8601aa670fc32eadf03ad557d503c7e4875
+SHA1: fe1b0865e1eec32391c418236fa4ce7547aaafb2
+MD5sum: 695b3b1cea71e6d13e86202bdd0f862d
+Description: Linux kernel headers for 4.19.141-surface-lts on amd64
+ This package provides kernel header files for 4.19.141-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.142-surface-lts
+Source: linux-4.19.142-surface-lts
+Version: 4.19.142-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@4f963aca9ac9>
+Installed-Size: 74447
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.142-surface-lts/linux-headers-4.19.142-surface-lts_4.19.142-surface-lts-1_amd64.deb
+Size: 11054414
+SHA256: 6f3f06530eb5d89699bdaacb6d9135ac6702d3363a86dd5ae54a3cfd04bfa8bc
+SHA1: 9a47e9638a5a96672d2d108a9ded5e11b0c5f7a3
+MD5sum: 7a2f232e9d68de2d6fd6bb6a65922d91
+Description: Linux kernel headers for 4.19.142-surface-lts on amd64
+ This package provides kernel header files for 4.19.142-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.143-surface-lts
+Source: linux-4.19.143-surface-lts
+Version: 4.19.143-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@80ad8ba8bc15>
+Installed-Size: 74481
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.143-surface-lts/linux-headers-4.19.143-surface-lts_4.19.143-surface-lts-1_amd64.deb
+Size: 11059170
+SHA256: ce5704f4d8e36ce3dd3155f20492558dea8711ddee52be7f70825148d8a3e308
+SHA1: 8a3a184e6cd6477d3a0f3529ab213f48e530e428
+MD5sum: 6e49cf0c6572fbe664a93f8e033fad06
+Description: Linux kernel headers for 4.19.143-surface-lts on amd64
+ This package provides kernel header files for 4.19.143-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.144-surface-lts
+Source: linux-4.19.144-surface-lts
+Version: 4.19.144-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@91d848e4efdf>
+Installed-Size: 74486
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.144-surface-lts/linux-headers-4.19.144-surface-lts_4.19.144-surface-lts-1_amd64.deb
+Size: 11060674
+SHA256: 32b250b486e4a74255b2c1429321ef327e0dfeb8c2dc7b3ecb09d05721ec960d
+SHA1: ec1a4d778942f14d26d1fb884ee0aa3991782a3c
+MD5sum: 0a828e24b08af914e4846c8214e97717
+Description: Linux kernel headers for 4.19.144-surface-lts on amd64
+ This package provides kernel header files for 4.19.144-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.146-surface-lts
+Source: linux-4.19.146-surface-lts
+Version: 4.19.146-surface-lts-3
+Architecture: amd64
+Maintainer: root <root@9a806827cc8d>
+Installed-Size: 74495
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.146-surface-lts/linux-headers-4.19.146-surface-lts_4.19.146-surface-lts-3_amd64.deb
+Size: 11058042
+SHA256: 773b90b30432e5ad6b0a0b27fc26ec3523f813bc725efcb5c570e17ed249d021
+SHA1: 80e90ab02e4a9d6cc6d9b7515950b8098a55fc80
+MD5sum: 6d8bb65cde4eec609c01379d7dc6b0c0
+Description: Linux kernel headers for 4.19.146-surface-lts on amd64
+ This package provides kernel header files for 4.19.146-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.149-surface-lts
+Source: linux-4.19.149-surface-lts
+Version: 4.19.149-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@078f317c0814>
+Installed-Size: 74503
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.149-surface-lts/linux-headers-4.19.149-surface-lts_4.19.149-surface-lts-1_amd64.deb
+Size: 11060118
+SHA256: 6c6c8c98a42d7ccccffe5353654664661f5a86ddac1c4ec73ecb3cfe7f887ea1
+SHA1: a942761f9e223f2f7dfd82b37c6e39367758c6e6
+MD5sum: 75b423c063ce0ebdb438ad03d09d08ed
+Description: Linux kernel headers for 4.19.149-surface-lts on amd64
+ This package provides kernel header files for 4.19.149-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.150-surface-lts
+Source: linux-4.19.150-surface-lts
+Version: 4.19.150-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@d2a8ca144bdc>
+Installed-Size: 74503
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.150-surface-lts/linux-headers-4.19.150-surface-lts_4.19.150-surface-lts-1_amd64.deb
+Size: 11064030
+SHA256: 02c79e2e01d28edd084acec31d56b57ec7934828bd0f4d5db216395014ab67aa
+SHA1: 335b0c4b5abadb3feb941a44ae9795906fb7b0bb
+MD5sum: 5be8bb39f8dd31093f412059b74e59d2
+Description: Linux kernel headers for 4.19.150-surface-lts on amd64
+ This package provides kernel header files for 4.19.150-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.151-surface-lts
+Source: linux-4.19.151-surface-lts
+Version: 4.19.151-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@bc745a4c68fb>
+Installed-Size: 74504
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.151-surface-lts/linux-headers-4.19.151-surface-lts_4.19.151-surface-lts-1_amd64.deb
+Size: 11061446
+SHA256: c0937fa9804a0c49c6cc3851580940713ad6e67c11421af0cb70b3c3581f70cc
+SHA1: 5a6ce74a7d3d612565d3b237956ae51b32aa3ee7
+MD5sum: 720d748fe129f8a417e9c190ef3a2397
+Description: Linux kernel headers for 4.19.151-surface-lts on amd64
+ This package provides kernel header files for 4.19.151-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.152-surface-lts
+Source: linux-4.19.152-surface-lts
+Version: 4.19.152-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@e7932b9f6bca>
+Installed-Size: 74511
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.152-surface-lts/linux-headers-4.19.152-surface-lts_4.19.152-surface-lts-1_amd64.deb
+Size: 11065610
+SHA256: 00f4c51627e82e2da7ddf4624cea11f287d47dad268dea1aed579dad5989bcde
+SHA1: bff503dd23e96ed7ca775c93640f4e578b6b4195
+MD5sum: 72b6cf509e1e8381fc47703e9bb68f78
+Description: Linux kernel headers for 4.19.152-surface-lts on amd64
+ This package provides kernel header files for 4.19.152-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.154-surface-lts
+Source: linux-4.19.154-surface-lts
+Version: 4.19.154-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@a5cd16caeea1>
+Installed-Size: 74512
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.154-surface-lts/linux-headers-4.19.154-surface-lts_4.19.154-surface-lts-1_amd64.deb
+Size: 11062998
+SHA256: 9fba8833230668b89fcb7a2fa038e2254544559bf8445a868397b1c943dd422b
+SHA1: 1a425a8ef04f79335b820dd1b4c5697fa3750f10
+MD5sum: 2c2f29e5aee98aa3ddaff1d6d5b7640d
+Description: Linux kernel headers for 4.19.154-surface-lts on amd64
+ This package provides kernel header files for 4.19.154-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.155-surface-lts
+Source: linux-4.19.155-surface-lts
+Version: 4.19.155-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@edb01ae606eb>
+Installed-Size: 74516
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.155-surface-lts/linux-headers-4.19.155-surface-lts_4.19.155-surface-lts-1_amd64.deb
+Size: 11063066
+SHA256: e49389bc07d86dde0d16b4530a7eebb7668bb405c12d8d587735271e90c3cd49
+SHA1: 7ee962b8640f6c9a60ce50d40d746e3196076b15
+MD5sum: 515835803ac63169204ff0a95baad7d3
+Description: Linux kernel headers for 4.19.155-surface-lts on amd64
+ This package provides kernel header files for 4.19.155-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.157-surface-lts
+Source: linux-4.19.157-surface-lts
+Version: 4.19.157-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@04d950bdd595>
+Installed-Size: 74516
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.157-surface-lts/linux-headers-4.19.157-surface-lts_4.19.157-surface-lts-1_amd64.deb
+Size: 11063670
+SHA256: a4d3edb70681d1a3e547e5f28ef295e1c1680b930a437cbf91c95eb9b613a71e
+SHA1: e20029dc1953a2770485ca2766753ed0fd08128c
+MD5sum: b6194fa3405f2a38a9143ab76db9e661
+Description: Linux kernel headers for 4.19.157-surface-lts on amd64
+ This package provides kernel header files for 4.19.157-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.160-surface-lts
+Source: linux-4.19.160-surface-lts
+Version: 4.19.160-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@dda427ae4d97>
+Installed-Size: 74525
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.160-surface-lts/linux-headers-4.19.160-surface-lts_4.19.160-surface-lts-1_amd64.deb
+Size: 11067034
+SHA256: 15cf173008efd72162c8737faf0cfe78ff85c10ed97ca5c88c18b236dd8af723
+SHA1: aaf411c5035ab3fa8fe7d8e2eb27b4e163ed4919
+MD5sum: 11e414951c7a839d87c0950522c2d54b
+Description: Linux kernel headers for 4.19.160-surface-lts on amd64
+ This package provides kernel header files for 4.19.160-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.161-surface-lts
+Source: linux-4.19.161-surface-lts
+Version: 4.19.161-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@d9e780ad80f9>
+Installed-Size: 74528
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.161-surface-lts/linux-headers-4.19.161-surface-lts_4.19.161-surface-lts-1_amd64.deb
+Size: 11065638
+SHA256: 2878578dbd0ec05d59716f9353be8c95090ff5e61c1661ead189276d85c57753
+SHA1: 013f9c68d5f09bb9499f6428049ab57166ec237b
+MD5sum: 946c79e32a429a0b15556a8af216faf2
+Description: Linux kernel headers for 4.19.161-surface-lts on amd64
+ This package provides kernel header files for 4.19.161-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.163-surface-lts
+Source: linux-4.19.163-surface-lts
+Version: 4.19.163-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@e68c005d2e7f>
+Installed-Size: 74530
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.163-surface-lts/linux-headers-4.19.163-surface-lts_4.19.163-surface-lts-1_amd64.deb
+Size: 11069086
+SHA256: e509bdd26eff5667e8df5a3e1bdbf85ccae59d89b54068d9716382589824ec4b
+SHA1: 19d31aceb6874ec03ec9b54de9592f7dd8020763
+MD5sum: e6edaec90efd7489b097e8e95980d66d
+Description: Linux kernel headers for 4.19.163-surface-lts on amd64
+ This package provides kernel header files for 4.19.163-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-4.19.165-surface-lts
+Source: linux-4.19.165-surface-lts
+Version: 4.19.165-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@a9daec1318b5>
+Installed-Size: 74533
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.165-surface-lts/linux-headers-4.19.165-surface-lts_4.19.165-surface-lts-1_amd64.deb
+Size: 11067046
+SHA256: be818d601b8dbbae9bbbbbcf98a876b2cb6cebeacb4de7db1fc28e22c1d9481b
+SHA1: de20eb08c955c6c930611242d36536542bea3a00
+MD5sum: 9324f18b36e96d4a38f61b3bacd47f00
+Description: Linux kernel headers for 4.19.165-surface-lts on amd64
+ This package provides kernel header files for 4.19.165-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.1-surface
+Source: linux-5.10.1-surface
+Version: 5.10.1-surface-1
+Architecture: amd64
+Maintainer: root <root@0763698165ae>
+Installed-Size: 50926
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.1-surface/linux-headers-5.10.1-surface_5.10.1-surface-1_amd64.deb
+Size: 8034716
+SHA256: d87b1cd053d0c94d5ee6e020f96dfb44d271d0fe53c9ffeb84161432bfb9c3ac
+SHA1: 634a988d82f2db89b32caeea269afb0ad41cd75f
+MD5sum: 12a755231dda715f3dd6297431ea2070
+Description: Linux kernel headers for 5.10.1-surface on amd64
+ This package provides kernel header files for 5.10.1-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.2-surface
+Source: linux-5.10.2-surface
+Version: 5.10.2-surface-1
+Architecture: amd64
+Maintainer: root <root@632c98f107c9>
+Installed-Size: 50927
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.2-surface/linux-headers-5.10.2-surface_5.10.2-surface-1_amd64.deb
+Size: 8032740
+SHA256: 48c581f4afc25c3c8a4315ce834900f19ea737fdf585ef22ce70abab4beb677b
+SHA1: 0e8d1d581522d27e3f3d6ff68c3b370d1a7e25ae
+MD5sum: 8e90e21382f961f126cd865d6bb495f8
+Description: Linux kernel headers for 5.10.2-surface on amd64
+ This package provides kernel header files for 5.10.2-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.5-surface
+Source: linux-5.10.5-surface
+Version: 5.10.5-surface-1
+Architecture: amd64
+Maintainer: root <root@6b445f98509f>
+Installed-Size: 50926
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.5-surface/linux-headers-5.10.5-surface_5.10.5-surface-1_amd64.deb
+Size: 8035460
+SHA256: 239003c4dadb3cb1d358c0ba96b35d2b9a0e0017c3d02c7d248104726c59dfaa
+SHA1: f448f40b5420ad72ea33eda77757398c1377a760
+MD5sum: ea4fb6bbd61004544a1f273be25a14da
+Description: Linux kernel headers for 5.10.5-surface on amd64
+ This package provides kernel header files for 5.10.5-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.6-surface
+Source: linux-5.10.6-surface
+Version: 5.10.6-surface-1
+Architecture: amd64
+Maintainer: root <root@e956d9f48388>
+Installed-Size: 50860
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.6-surface/linux-headers-5.10.6-surface_5.10.6-surface-1_amd64.deb
+Size: 8028188
+SHA256: e5a3fdba26707991da187e1182db38a5f3f88ae1a896e6c8b64d4c6fb4b3246c
+SHA1: 83f432c7ae2bf07ee2fd5f21b1d84c701d1c40cc
+MD5sum: af31517521be72ad3e8c55bebb5d7b13
+Description: Linux kernel headers for 5.10.6-surface on amd64
+ This package provides kernel header files for 5.10.6-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.7-surface
+Source: linux-5.10.7-surface
+Version: 5.10.7-surface-1
+Architecture: amd64
+Maintainer: root <root@5bd8969cd2e8>
+Installed-Size: 50927
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.7-surface/linux-headers-5.10.7-surface_5.10.7-surface-1_amd64.deb
+Size: 8032860
+SHA256: f0096c9ede12436dbbe50393a28c3058a2c4e1a63806e8f600d330f586b64d6f
+SHA1: dd79f01cc84d41f6863d2e54591d16f6658ce669
+MD5sum: 2a39bff0546c3fb29d849056769e9784
+Description: Linux kernel headers for 5.10.7-surface on amd64
+ This package provides kernel header files for 5.10.7-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.8-surface
+Source: linux-5.10.8-surface
+Version: 5.10.8-surface-1
+Architecture: amd64
+Maintainer: root <root@184c03164254>
+Installed-Size: 50928
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.8-surface/linux-headers-5.10.8-surface_5.10.8-surface-1_amd64.deb
+Size: 8031944
+SHA256: 3364260571fae22c1dc6dcfba4c3d1021bbc91cd79c73f8b87e1152148af7f58
+SHA1: 4728326fc27c56700c6e47ccd04139729e7dd029
+MD5sum: 8c7a138339d8066f905072181e9c2897
+Description: Linux kernel headers for 5.10.8-surface on amd64
+ This package provides kernel header files for 5.10.8-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.10-surface
+Source: linux-5.7.10-surface
+Version: 5.7.10-surface-1
+Architecture: amd64
+Maintainer: root <root@4927ac146c21>
+Installed-Size: 49236
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.10-surface/linux-headers-5.7.10-surface_5.7.10-surface-1_amd64.deb
+Size: 7788420
+SHA256: ed83ff19e9990cf5bc53635a89df56e3a2a593ba56620cc26b02db34bf31bf95
+SHA1: bdb8f2531cce2741477b3ef726a8f3f563eaf74c
+MD5sum: 83fcbfb3028bcc6fa9abd4d9a9641a23
+Description: Linux kernel headers for 5.7.10-surface on amd64
+ This package provides kernel header files for 5.7.10-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.11-surface
+Source: linux-5.7.11-surface
+Version: 5.7.11-surface-1
+Architecture: amd64
+Maintainer: root <root@72faf7cd7528>
+Installed-Size: 49234
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.11-surface/linux-headers-5.7.11-surface_5.7.11-surface-1_amd64.deb
+Size: 7790368
+SHA256: 96f5600205bd82f4f0ad68f3d1691790a01d582bafdb0a7107be1b0ea1f2a280
+SHA1: b62dad0a632123a6d458d4600b20aa68f18e70d0
+MD5sum: 7018354014645cea39696423c171c5dd
+Description: Linux kernel headers for 5.7.11-surface on amd64
+ This package provides kernel header files for 5.7.11-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.12-surface
+Source: linux-5.7.12-surface
+Version: 5.7.12-surface-1
+Architecture: amd64
+Maintainer: root <root@2bd7f0465c41>
+Installed-Size: 49245
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.12-surface/linux-headers-5.7.12-surface_5.7.12-surface-1_amd64.deb
+Size: 7790916
+SHA256: c595b013cd9fa2e3ce87c822fb6ed259cea4de1042282a486ec8a10e8aff6047
+SHA1: 8318989470817b2daef860d9de2ce98051260e9c
+MD5sum: e990059128f45550dfed6614ac448b1c
+Description: Linux kernel headers for 5.7.12-surface on amd64
+ This package provides kernel header files for 5.7.12-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.15-surface
+Source: linux-5.7.15-surface
+Version: 5.7.15-surface-1
+Architecture: amd64
+Maintainer: root <root@90ae6e4ea0e2>
+Installed-Size: 49249
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.15-surface/linux-headers-5.7.15-surface_5.7.15-surface-1_amd64.deb
+Size: 7797784
+SHA256: 65f1a6f4fba7f676b87d35b05c1048faf5d1029b1b425abea24da282af993ce7
+SHA1: bb74a72961667d0d552dbc8a09b0aa2171fb2662
+MD5sum: 284648bd9a5e32d51507e27855069426
+Description: Linux kernel headers for 5.7.15-surface on amd64
+ This package provides kernel header files for 5.7.15-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.7-surface
+Source: linux-5.7.7-surface
+Version: 5.7.7-surface-2
+Architecture: amd64
+Maintainer: root <root@62f35afa3ce7>
+Installed-Size: 49209
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.7-surface/linux-headers-5.7.7-surface_5.7.7-surface-2_amd64.deb
+Size: 7787668
+SHA256: 0bd0bac63e065045be535e1e26b973db3b4575b2466b762a4473f4e4b7b34a2c
+SHA1: 36eeea3a0a50cadcd4ab65cdcd7e69210bc75ae1
+MD5sum: 16f2f7c297c6660e210d0477cd4afd3a
+Description: Linux kernel headers for 5.7.7-surface on amd64
+ This package provides kernel header files for 5.7.7-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.8-surface
+Source: linux-5.7.8-surface
+Version: 5.7.8-surface-2
+Architecture: amd64
+Maintainer: root <root@c0e64720ae0f>
+Installed-Size: 49212
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.8-surface/linux-headers-5.7.8-surface_5.7.8-surface-2_amd64.deb
+Size: 7790284
+SHA256: 4d0899aa5530970d6fa8ee6a79207ab8c04245f43777e7116307c834433f01ab
+SHA1: 00e9c8c6286d582892651132524a1101e032fe44
+MD5sum: 62459d28dc22394ece5b7c9e93aa68fc
+Description: Linux kernel headers for 5.7.8-surface on amd64
+ This package provides kernel header files for 5.7.8-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.7.9-surface
+Source: linux-5.7.9-surface
+Version: 5.7.9-surface-1
+Architecture: amd64
+Maintainer: root <root@bb3606677427>
+Installed-Size: 49258
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.9-surface/linux-headers-5.7.9-surface_5.7.9-surface-1_amd64.deb
+Size: 7798108
+SHA256: 9dd1b55f3cf53e84b47154bd0d325088882a1e3e178891d905dc353f9ab6ec39
+SHA1: 29c6bef9f179752e69ca481e8474817225f093ac
+MD5sum: a55d0ce6726012112115306bf06a7fba
+Description: Linux kernel headers for 5.7.9-surface on amd64
+ This package provides kernel header files for 5.7.9-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.1-surface
+Source: linux-5.8.1-surface
+Version: 5.8.1-surface-2
+Architecture: amd64
+Maintainer: root <root@15d124d09cc9>
+Installed-Size: 49881
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.1-surface/linux-headers-5.8.1-surface_5.8.1-surface-2_amd64.deb
+Size: 7913988
+SHA256: c5cb0ea855ceff6007f368ed25c505bde6bdf78a1103e58eef6f86ae5df27e56
+SHA1: c8a08ed7223b19f7227944323a2e9f57226a07d4
+MD5sum: 7e629513d7f625bd6ee60428e332956a
+Description: Linux kernel headers for 5.8.1-surface on amd64
+ This package provides kernel header files for 5.8.1-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.10-surface
+Source: linux-5.8.10-surface
+Version: 5.8.10-surface-3
+Architecture: amd64
+Maintainer: root <root@bdad2f00c397>
+Installed-Size: 49946
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.10-surface/linux-headers-5.8.10-surface_5.8.10-surface-3_amd64.deb
+Size: 7918316
+SHA256: 0e1e31d11d317681fd83d1a6bd1ba91409ebf6e374d91032e5052e9982bbf781
+SHA1: aea620aa94784351ab117c50225528683d061bc8
+MD5sum: 4a7dd9d400289def50508800096177d5
+Description: Linux kernel headers for 5.8.10-surface on amd64
+ This package provides kernel header files for 5.8.10-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.12-surface
+Source: linux-5.8.12-surface
+Version: 5.8.12-surface-2
+Architecture: amd64
+Maintainer: root <root@b20879272d4b>
+Installed-Size: 49950
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.12-surface/linux-headers-5.8.12-surface_5.8.12-surface-2_amd64.deb
+Size: 7917496
+SHA256: a8840481974fc0faf9621f95bc1f1dfcf3d1b1e9058e47f4d4bcc9a8006d439a
+SHA1: 3ac7c26a79f205a94d9f827c90533afffbba4d53
+MD5sum: 279468a7f8e0895ab7cb07b927e0e6b6
+Description: Linux kernel headers for 5.8.12-surface on amd64
+ This package provides kernel header files for 5.8.12-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.14-surface
+Source: linux-5.8.14-surface
+Version: 5.8.14-surface-1
+Architecture: amd64
+Maintainer: root <root@17c0c3c38692>
+Installed-Size: 49953
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.14-surface/linux-headers-5.8.14-surface_5.8.14-surface-1_amd64.deb
+Size: 7923192
+SHA256: bdda56cd8f3bf6d1a7311d3c15753ed5eaaefed344dd2b0915e08ef69eea4959
+SHA1: b87294d64d3547101b2253e7d54c988c2d998735
+MD5sum: b1d5e16cdfc1af3e97b9844b1db27911
+Description: Linux kernel headers for 5.8.14-surface on amd64
+ This package provides kernel header files for 5.8.14-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.15-surface
+Source: linux-5.8.15-surface
+Version: 5.8.15-surface-1
+Architecture: amd64
+Maintainer: root <root@98c5dd705f34>
+Installed-Size: 49954
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.15-surface/linux-headers-5.8.15-surface_5.8.15-surface-1_amd64.deb
+Size: 7919964
+SHA256: aa7c9bc55a3b09c60185434fbcef43d06d836df58ade0d3c212fd28e6903ea98
+SHA1: aa1795c5a95ddf34fb384e7f7fad09bc8a634c92
+MD5sum: bd789340de589016c8f3bd481d81dc3e
+Description: Linux kernel headers for 5.8.15-surface on amd64
+ This package provides kernel header files for 5.8.15-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.3-surface
+Source: linux-5.8.3-surface
+Version: 5.8.3-surface-1
+Architecture: amd64
+Maintainer: root <root@f6f3f7e04240>
+Installed-Size: 49886
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.3-surface/linux-headers-5.8.3-surface_5.8.3-surface-1_amd64.deb
+Size: 7913992
+SHA256: 5af09dd634f841c7ba6837a428e77cd31e16a43055c7a27d1ee71ccd8c6b91fa
+SHA1: 500954e258082ef12a641116e8736ed336a0d336
+MD5sum: af85e1d95f60d3a9e6d9863c3fd592c4
+Description: Linux kernel headers for 5.8.3-surface on amd64
+ This package provides kernel header files for 5.8.3-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.5-surface
+Source: linux-5.8.5-surface
+Version: 5.8.5-surface-1
+Architecture: amd64
+Maintainer: root <root@bde827be215b>
+Installed-Size: 49888
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.5-surface/linux-headers-5.8.5-surface_5.8.5-surface-1_amd64.deb
+Size: 7913796
+SHA256: 7f632de91d0bdac390dfc329687d212e10c926a67962c22499586371e4ee1d94
+SHA1: d837e95fdcaa98ef77ebbe33ab4c7cd8587a2473
+MD5sum: 15cdad3bc281c8097c1da580e0990786
+Description: Linux kernel headers for 5.8.5-surface on amd64
+ This package provides kernel header files for 5.8.5-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.6-surface
+Source: linux-5.8.6-surface
+Version: 5.8.6-surface-1
+Architecture: amd64
+Maintainer: root <root@ccf564328e4d>
+Installed-Size: 49886
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.6-surface/linux-headers-5.8.6-surface_5.8.6-surface-1_amd64.deb
+Size: 7909744
+SHA256: 14a02af9deea15f01f461c23361130120c6fc524bcf75929ff9ab1b4b65f078a
+SHA1: da3aba6e4e20288daaaec0a6f32bb9a5e2bde4ab
+MD5sum: 098bfeda7745e0a0e4c1e3b326a852d5
+Description: Linux kernel headers for 5.8.6-surface on amd64
+ This package provides kernel header files for 5.8.6-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.7-surface
+Source: linux-5.8.7-surface
+Version: 5.8.7-surface-1
+Architecture: amd64
+Maintainer: root <root@41f27a5f0e5e>
+Installed-Size: 49921
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.7-surface/linux-headers-5.8.7-surface_5.8.7-surface-1_amd64.deb
+Size: 7919600
+SHA256: e6c66f58122cf6ddfaee19756460b68e5d9d0c9f7c169a1147a7d300f41c29b2
+SHA1: 0fdde50e29c8c2b2b4a06d29e6e2705dcc9e49d0
+MD5sum: 18b428ca0c91d2d42a7fc579602ff61b
+Description: Linux kernel headers for 5.8.7-surface on amd64
+ This package provides kernel header files for 5.8.7-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.8.8-surface
+Source: linux-5.8.8-surface
+Version: 5.8.8-surface-1
+Architecture: amd64
+Maintainer: root <root@e2dd547fa2da>
+Installed-Size: 49924
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.8-surface/linux-headers-5.8.8-surface_5.8.8-surface-1_amd64.deb
+Size: 7922400
+SHA256: e82a07c4b6f7400a983e4428de4367cc13fb9cbe5cb3179306c0c93a9533450e
+SHA1: 98375de0300821683a65424cde9f81ac987797b6
+MD5sum: b7ecee69ee6bfb8bd7a64c3c04979da1
+Description: Linux kernel headers for 5.8.8-surface on amd64
+ This package provides kernel header files for 5.8.8-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.1-surface
+Source: linux-5.9.1-surface
+Version: 5.9.1-surface-1
+Architecture: amd64
+Maintainer: root <root@7c54c005d122>
+Installed-Size: 50313
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.1-surface/linux-headers-5.9.1-surface_5.9.1-surface-1_amd64.deb
+Size: 7953212
+SHA256: c20cdf8becebe3aececfacf3d555eb374912928f5b4456b512f385dd6a7fb946
+SHA1: da73c32237fbb381fbd8df1eff0e509f316625e8
+MD5sum: 0835e3e2bce7d9ef3f42cc35853fe8de
+Description: Linux kernel headers for 5.9.1-surface on amd64
+ This package provides kernel header files for 5.9.1-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.10-surface
+Source: linux-5.9.10-surface
+Version: 5.9.10-surface-1
+Architecture: amd64
+Maintainer: root <root@d256ad3232f2>
+Installed-Size: 50399
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.10-surface/linux-headers-5.9.10-surface_5.9.10-surface-1_amd64.deb
+Size: 7962756
+SHA256: 83458e12ba1af0bd5cb974d37effec0a60c01246b333e16a263661673daa9636
+SHA1: 912eddf3e13f2d54cad74e17b029fb8302b8d46f
+MD5sum: 9f6ae4d4f346c189accb0c10d4416e4c
+Description: Linux kernel headers for 5.9.10-surface on amd64
+ This package provides kernel header files for 5.9.10-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.11-surface
+Source: linux-5.9.11-surface
+Version: 5.9.11-surface-1
+Architecture: amd64
+Maintainer: root <root@8672db94181b>
+Installed-Size: 50343
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.11-surface/linux-headers-5.9.11-surface_5.9.11-surface-1_amd64.deb
+Size: 7955332
+SHA256: aaae92258f708e464471e07c99cbde9230ac18e10fd937a72626e6f02857e20d
+SHA1: be6e1134839b66bed6cbe060d98490c0706be6a6
+MD5sum: 42fede343885f547ed6e07bf5ee6f594
+Description: Linux kernel headers for 5.9.11-surface on amd64
+ This package provides kernel header files for 5.9.11-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.12-surface
+Source: linux-5.9.12-surface
+Version: 5.9.12-surface-1
+Architecture: amd64
+Maintainer: root <root@59c6a20f2bc0>
+Installed-Size: 50403
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.12-surface/linux-headers-5.9.12-surface_5.9.12-surface-1_amd64.deb
+Size: 7958736
+SHA256: 6e1521a41c68343b82c98680ec318e1c3a99bce8da30874e3faa21d7bbfdf54b
+SHA1: 8c0619c247e1164561560ca98205d0cfb08a7c8f
+MD5sum: 043ef6bbd6cd5feb70d73f55b5c38e8d
+Description: Linux kernel headers for 5.9.12-surface on amd64
+ This package provides kernel header files for 5.9.12-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.13-surface
+Source: linux-5.9.13-surface
+Version: 5.9.13-surface-1
+Architecture: amd64
+Maintainer: root <root@55bf02d50f4b>
+Installed-Size: 50344
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.13-surface/linux-headers-5.9.13-surface_5.9.13-surface-1_amd64.deb
+Size: 7953588
+SHA256: ebb276db1785d5253fcfd43f3dade117b425a877d75344ae7bb10468544bb808
+SHA1: ba0f86b7c32d93f871a5e70da8328f7874fb07b9
+MD5sum: 302f64616b7e9cf0467dbeb157929d24
+Description: Linux kernel headers for 5.9.13-surface on amd64
+ This package provides kernel header files for 5.9.13-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.14-surface
+Source: linux-5.9.14-surface
+Version: 5.9.14-surface-1
+Architecture: amd64
+Maintainer: root <root@36d2508acee4>
+Installed-Size: 50344
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.14-surface/linux-headers-5.9.14-surface_5.9.14-surface-1_amd64.deb
+Size: 7958188
+SHA256: 80fe48066a680e9c3873f61ba7f9afc3836141ce6a0dbcb4bd51813c0dac9c3e
+SHA1: 6bf7798236831d8baf31bafc7175fff4e34afeeb
+MD5sum: 8ce39a6318f77c6fe08a9d64fd8981a1
+Description: Linux kernel headers for 5.9.14-surface on amd64
+ This package provides kernel header files for 5.9.14-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.3-surface
+Source: linux-5.9.3-surface
+Version: 5.9.3-surface-1
+Architecture: amd64
+Maintainer: root <root@698e9fd94608>
+Installed-Size: 50317
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.3-surface/linux-headers-5.9.3-surface_5.9.3-surface-1_amd64.deb
+Size: 7956016
+SHA256: cda13ddcbe5d6a01fe9e2d0b889850f8a94ad8650495ffbb9325eeec94a3a35c
+SHA1: 1b5d508b3f3186db6fa95d5ab44ba52683160ffa
+MD5sum: 45069c5f5343a570fbb6c0034672920a
+Description: Linux kernel headers for 5.9.3-surface on amd64
+ This package provides kernel header files for 5.9.3-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.6-surface
+Source: linux-5.9.6-surface
+Version: 5.9.6-surface-1
+Architecture: amd64
+Maintainer: root <root@b763d6baa23d>
+Installed-Size: 50382
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.6-surface/linux-headers-5.9.6-surface_5.9.6-surface-1_amd64.deb
+Size: 7962272
+SHA256: ec7ae0190a85c9e486e0f1ab3851aad1797a321e15b9b323a74f21a067aeaac2
+SHA1: 5d1f8eb6dc9474ba7c9d3fd90cbf86567af629c9
+MD5sum: 5f348782e079444135626169560e703f
+Description: Linux kernel headers for 5.9.6-surface on amd64
+ This package provides kernel header files for 5.9.6-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.9.8-surface
+Source: linux-5.9.8-surface
+Version: 5.9.8-surface-1
+Architecture: amd64
+Maintainer: root <root@d60ed7ad9b5a>
+Installed-Size: 50382
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.8-surface/linux-headers-5.9.8-surface_5.9.8-surface-1_amd64.deb
+Size: 7963284
+SHA256: f487f54e0f33076019d494e38769b01f97448ccdee384846bca69495b5f2b872
+SHA1: a52d20142f212b9c15390dacb4327cdce833aec8
+MD5sum: 24f5c027e63b2d31fea07031fab487a9
+Description: Linux kernel headers for 5.9.8-surface on amd64
+ This package provides kernel header files for 5.9.8-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-surface
+Source: linux-surface
+Version: 5.10.8-surface-1
+Architecture: amd64
+Maintainer: surfacebot <surfacebot@users.noreply.github.com>
+Installed-Size: 7
+Depends: linux-headers-5.10.8-surface (= 5.10.8-surface-1)
+Homepage: https://github.com/linux-surface/linux-surface
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-surface/linux-headers-surface_5.10.8-surface-1_amd64.deb
+Size: 2458
+SHA256: 2bb4f47f914ef0a9ab145700b986e32a780b824a4d0ba20071ea17092c18fd2d
+SHA1: 4a01a38dfbca350962df66f047176233f48b592a
+MD5sum: dc2eca34f823b399b4951ddf782c78c6
+Description:
+  Meta-package for linux-surface headers.
+
+Package: linux-headers-surface-lts
+Source: linux-surface-lts
+Version: 4.19.165-surface-lts-1
+Architecture: amd64
+Maintainer: surfacebot <surfacebot@users.noreply.github.com>
+Installed-Size: 7
+Depends: linux-headers-4.19.165-surface-lts (= 4.19.165-surface-lts-1)
+Homepage: https://github.com/linux-surface/linux-surface
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-surface-lts/linux-headers-surface-lts_4.19.165-surface-lts-1_amd64.deb
+Size: 2474
+SHA256: 036b3d3ec265d145468b4156e0003f847e59968463e1d813cf2a27cce4a699f3
+SHA1: 5b1f2a8c6b61d0c6a452ece4199755fa2d6a3de8
+MD5sum: 887490ea0ee1e5b7dd321a584067f1b9
+Description:
+  Meta-package for linux-surface headers.
+
+Package: linux-image-4.19.131-surface-lts
+Source: linux-4.19.131-surface-lts
+Version: 4.19.131-surface-lts-3
+Architecture: amd64
+Maintainer: root <root@3d7a6db8569c>
+Installed-Size: 243739
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.131-surface-lts/linux-image-4.19.131-surface-lts_4.19.131-surface-lts-3_amd64.deb
+Size: 54404882
+SHA256: 42b4d15b0c3c190a2d9c293c61e7e6e71dafbb08cc130dc05d962c3a168ea9b3
+SHA1: 6ff401360636987fe8c66b211ec24e74df66e5e6
+MD5sum: 9117c0d06d7755e6a67481101236c8f2
+Description: Linux kernel, version 4.19.131-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.131-surface-lts.
+
+Package: linux-image-4.19.132-surface-lts
+Source: linux-4.19.132-surface-lts
+Version: 4.19.132-surface-lts-2
+Architecture: amd64
+Maintainer: root <root@025ad2357872>
+Installed-Size: 243744
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.132-surface-lts/linux-image-4.19.132-surface-lts_4.19.132-surface-lts-2_amd64.deb
+Size: 54400070
+SHA256: 8d5ed3cd8d937ac46444dc271bc09f883c5f56a466d18ac7f88cb302cf4d3130
+SHA1: 3dacdd4dcab2260096096b6ac4927bd13c003b3c
+MD5sum: 83612f62b0f46bb8b62c9c78cea71c95
+Description: Linux kernel, version 4.19.132-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.132-surface-lts.
+
+Package: linux-image-4.19.133-surface-lts
+Source: linux-4.19.133-surface-lts
+Version: 4.19.133-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@e1309a9e9567>
+Installed-Size: 241546
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.133-surface-lts/linux-image-4.19.133-surface-lts_4.19.133-surface-lts-1_amd64.deb
+Size: 54231190
+SHA256: 203f2f6e774f4667c4a400794a2267c118e5a67267d52f9b369eec0f44820fb2
+SHA1: 2e59eac8ca74fb218ad56f547710a2eaa0fcfb85
+MD5sum: 1730de11486efb85d2788cd433d853b8
+Description: Linux kernel, version 4.19.133-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.133-surface-lts.
+
+Package: linux-image-4.19.134-surface-lts
+Source: linux-4.19.134-surface-lts
+Version: 4.19.134-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@2c515bd90b22>
+Installed-Size: 241834
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.134-surface-lts/linux-image-4.19.134-surface-lts_4.19.134-surface-lts-1_amd64.deb
+Size: 54285098
+SHA256: 1230036638649fabec67104d161fea5122a07fe59a3bfb32fceee09dc4c183c6
+SHA1: 583d283b14f176ec0f6ccbfd58a4d4abc1d934e5
+MD5sum: 338f29b5984fba5101491edfabcb496e
+Description: Linux kernel, version 4.19.134-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.134-surface-lts.
+
+Package: linux-image-4.19.135-surface-lts
+Source: linux-4.19.135-surface-lts
+Version: 4.19.135-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@76c202ba56d9>
+Installed-Size: 241859
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.135-surface-lts/linux-image-4.19.135-surface-lts_4.19.135-surface-lts-1_amd64.deb
+Size: 54296010
+SHA256: b54fb17946b8de0247da6f21af51d79f6f2197a8dd8e04981b7bd736b24906b6
+SHA1: eb7cffa17cc66e591cb4064a14acefff50f4d59b
+MD5sum: 7b068f61d6ea5c1b6aa24a671a0893f0
+Description: Linux kernel, version 4.19.135-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.135-surface-lts.
+
+Package: linux-image-4.19.136-surface-lts
+Source: linux-4.19.136-surface-lts
+Version: 4.19.136-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@2e9d6e64cd1d>
+Installed-Size: 241870
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.136-surface-lts/linux-image-4.19.136-surface-lts_4.19.136-surface-lts-1_amd64.deb
+Size: 54298222
+SHA256: 7ecd0994e7e63f603a08052c6330332440a33d82d653cbdf937983246a9466c7
+SHA1: e96f35b896c4f794e75385da2eb00a761a60459b
+MD5sum: 659a410623a6df9c5c82ef8c4e3dc8c4
+Description: Linux kernel, version 4.19.136-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.136-surface-lts.
+
+Package: linux-image-4.19.139-surface-lts
+Source: linux-4.19.139-surface-lts
+Version: 4.19.139-surface-lts-2
+Architecture: amd64
+Maintainer: root <root@6ec12edd4c3f>
+Installed-Size: 243290
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.139-surface-lts/linux-image-4.19.139-surface-lts_4.19.139-surface-lts-2_amd64.deb
+Size: 54581234
+SHA256: 9391a6b0fd544ac57dc96b4172485a85f4e6f74861a3b42ebdfa5af751244143
+SHA1: 3dc22d1b30b19b1ff4be2e2a32a5b8bb6a7c4c20
+MD5sum: 17378123f6e9dfb0fd8c57f669f62744
+Description: Linux kernel, version 4.19.139-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.139-surface-lts.
+
+Package: linux-image-4.19.141-surface-lts
+Source: linux-4.19.141-surface-lts
+Version: 4.19.141-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@fccda39deeab>
+Installed-Size: 243298
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.141-surface-lts/linux-image-4.19.141-surface-lts_4.19.141-surface-lts-1_amd64.deb
+Size: 54585946
+SHA256: 62b34086f6aa879e515054d4099619001cf887924e7c83b6a7bc3c3ddef18b59
+SHA1: 75f390c09ba928cc8f972ec1f864e00f58498ddb
+MD5sum: fd4fc5032bc3caeb966f92a4b138b1c8
+Description: Linux kernel, version 4.19.141-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.141-surface-lts.
+
+Package: linux-image-4.19.142-surface-lts
+Source: linux-4.19.142-surface-lts
+Version: 4.19.142-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@4f963aca9ac9>
+Installed-Size: 243304
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.142-surface-lts/linux-image-4.19.142-surface-lts_4.19.142-surface-lts-1_amd64.deb
+Size: 54589674
+SHA256: 81388866e46bec036e4dc4924db135ae4ab5dd065cc6366be852031a7a68cce3
+SHA1: 29b0666863752e60efe5f81516641ddce980d006
+MD5sum: 05bb78269fd84b407cb5061b35ed24ee
+Description: Linux kernel, version 4.19.142-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.142-surface-lts.
+
+Package: linux-image-4.19.143-surface-lts
+Source: linux-4.19.143-surface-lts
+Version: 4.19.143-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@80ad8ba8bc15>
+Installed-Size: 243320
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.143-surface-lts/linux-image-4.19.143-surface-lts_4.19.143-surface-lts-1_amd64.deb
+Size: 54598958
+SHA256: 9910e7a60cb097e56aab3f89091e6e58bced412682aaae750d67c5ca7a1b494e
+SHA1: 2a66b0f37ce200929e6879ed4522333677872047
+MD5sum: b62be8bc94d95a5cd42c6176ac9a1677
+Description: Linux kernel, version 4.19.143-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.143-surface-lts.
+
+Package: linux-image-4.19.144-surface-lts
+Source: linux-4.19.144-surface-lts
+Version: 4.19.144-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@91d848e4efdf>
+Installed-Size: 243409
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.144-surface-lts/linux-image-4.19.144-surface-lts_4.19.144-surface-lts-1_amd64.deb
+Size: 54609038
+SHA256: c3af4c4220d4c152d10066ce29ef9d137bb2408020f84f23ac545774bf5d17f9
+SHA1: c4c76cb56966a0895bdd61fd34ed3a4831ee6a36
+MD5sum: ccd812d0671043d8adcd81068ef28ec1
+Description: Linux kernel, version 4.19.144-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.144-surface-lts.
+
+Package: linux-image-4.19.146-surface-lts
+Source: linux-4.19.146-surface-lts
+Version: 4.19.146-surface-lts-3
+Architecture: amd64
+Maintainer: root <root@9a806827cc8d>
+Installed-Size: 243407
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.146-surface-lts/linux-image-4.19.146-surface-lts_4.19.146-surface-lts-3_amd64.deb
+Size: 54604150
+SHA256: 7b2c2fa3c2df0a397b81fd657a24184021c78677c53e133b5befcdbc23989ef1
+SHA1: aca4bf9c432a300ddd70c341d27f60dd8aef62fe
+MD5sum: d647ae9e7a767313e0b36a9add10cb18
+Description: Linux kernel, version 4.19.146-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.146-surface-lts.
+
+Package: linux-image-4.19.149-surface-lts
+Source: linux-4.19.149-surface-lts
+Version: 4.19.149-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@078f317c0814>
+Installed-Size: 243427
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.149-surface-lts/linux-image-4.19.149-surface-lts_4.19.149-surface-lts-1_amd64.deb
+Size: 54606978
+SHA256: 9cc2d6934d27e80be742fbd55ec530b834b4b4f495166d5538be6f693b5ace40
+SHA1: d7407c04a747861dee709fc25d672170fcc85cfa
+MD5sum: 6855265d9247bf542a20e099a1b01528
+Description: Linux kernel, version 4.19.149-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.149-surface-lts.
+
+Package: linux-image-4.19.150-surface-lts
+Source: linux-4.19.150-surface-lts
+Version: 4.19.150-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@d2a8ca144bdc>
+Installed-Size: 243486
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.150-surface-lts/linux-image-4.19.150-surface-lts_4.19.150-surface-lts-1_amd64.deb
+Size: 54617638
+SHA256: d680093848bd265fc4515ecedc2e40019bf7ad0609c31b66572a6140d39c213d
+SHA1: a62e2b9024c9d0dcb73f96a1060464864f667293
+MD5sum: f1c4cc860e8046cabe5b63f706fc50b1
+Description: Linux kernel, version 4.19.150-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.150-surface-lts.
+
+Package: linux-image-4.19.151-surface-lts
+Source: linux-4.19.151-surface-lts
+Version: 4.19.151-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@bc745a4c68fb>
+Installed-Size: 243483
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.151-surface-lts/linux-image-4.19.151-surface-lts_4.19.151-surface-lts-1_amd64.deb
+Size: 54620770
+SHA256: 0e614f175f9f33e07c21a69dc527f69784c7f28017a2c8890558c1e3e15a4dd9
+SHA1: 1eaa123981f420227287ff4957d441c37ffe15e6
+MD5sum: b47e9af50256f414e1257de2c135fa9d
+Description: Linux kernel, version 4.19.151-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.151-surface-lts.
+
+Package: linux-image-4.19.152-surface-lts
+Source: linux-4.19.152-surface-lts
+Version: 4.19.152-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@e7932b9f6bca>
+Installed-Size: 243490
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.152-surface-lts/linux-image-4.19.152-surface-lts_4.19.152-surface-lts-1_amd64.deb
+Size: 54623862
+SHA256: 0b821d7482857ca88eea68b974bde204cc5a68ec78f59ffb646f1a9ed0df3e2e
+SHA1: e80ac54c7a6cd6e88a26bcd2be1192c0d7c12934
+MD5sum: b88cbae770e3bb3b514e64ee022ff93c
+Description: Linux kernel, version 4.19.152-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.152-surface-lts.
+
+Package: linux-image-4.19.154-surface-lts
+Source: linux-4.19.154-surface-lts
+Version: 4.19.154-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@a5cd16caeea1>
+Installed-Size: 243481
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.154-surface-lts/linux-image-4.19.154-surface-lts_4.19.154-surface-lts-1_amd64.deb
+Size: 54620478
+SHA256: bc6aede780a533ee8b1ca4a512f877a018e0bc1f11216eb42a6d7b7b20e6a761
+SHA1: 94c22e80ad23229d62903476599ccba2ea46389d
+MD5sum: ffbdbb706ff8b460ecdcae263e0a0080
+Description: Linux kernel, version 4.19.154-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.154-surface-lts.
+
+Package: linux-image-4.19.155-surface-lts
+Source: linux-4.19.155-surface-lts
+Version: 4.19.155-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@edb01ae606eb>
+Installed-Size: 243495
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.155-surface-lts/linux-image-4.19.155-surface-lts_4.19.155-surface-lts-1_amd64.deb
+Size: 54617714
+SHA256: a20bd8f92eece21b9a20528118e8c41c5f3b8abeb2a77a85e43c26523b7fa24b
+SHA1: a4aad5c628a05ad51fba1ddf535eeb67491737c1
+MD5sum: b5387b593a8a77397871ab0cf41ad34c
+Description: Linux kernel, version 4.19.155-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.155-surface-lts.
+
+Package: linux-image-4.19.157-surface-lts
+Source: linux-4.19.157-surface-lts
+Version: 4.19.157-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@04d950bdd595>
+Installed-Size: 243507
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.157-surface-lts/linux-image-4.19.157-surface-lts_4.19.157-surface-lts-1_amd64.deb
+Size: 54624006
+SHA256: 214446a2711ff6eb1d6328b1c3f54ba870696bf23cd07190597fd7bc46183b6e
+SHA1: 4a89326e6d47531b9274ab16a17c07b9470dc68f
+MD5sum: 3fb18e70ae26090668aab3c7fb353e6f
+Description: Linux kernel, version 4.19.157-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.157-surface-lts.
+
+Package: linux-image-4.19.160-surface-lts
+Source: linux-4.19.160-surface-lts
+Version: 4.19.160-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@dda427ae4d97>
+Installed-Size: 243508
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.160-surface-lts/linux-image-4.19.160-surface-lts_4.19.160-surface-lts-1_amd64.deb
+Size: 54625270
+SHA256: babda0759af1741e70ff795c1f830edd90c246e66c7c9dce59b11b30c43848e5
+SHA1: 7caaff38803ad6a12531106dc9fc94c7d426200a
+MD5sum: 14a8b38fb59fc03cabf6b3b0109229d1
+Description: Linux kernel, version 4.19.160-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.160-surface-lts.
+
+Package: linux-image-4.19.161-surface-lts
+Source: linux-4.19.161-surface-lts
+Version: 4.19.161-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@d9e780ad80f9>
+Installed-Size: 243512
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.161-surface-lts/linux-image-4.19.161-surface-lts_4.19.161-surface-lts-1_amd64.deb
+Size: 54618670
+SHA256: 472be4cf95428c328b9cd14d7d8f3fa70f8f07264aeef3590b08d232500bc2eb
+SHA1: 818a1a970804770322f135941f99f10318b0cd67
+MD5sum: 35d15c7309f2c8c44f412ccf454bbd8b
+Description: Linux kernel, version 4.19.161-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.161-surface-lts.
+
+Package: linux-image-4.19.163-surface-lts
+Source: linux-4.19.163-surface-lts
+Version: 4.19.163-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@e68c005d2e7f>
+Installed-Size: 243512
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.163-surface-lts/linux-image-4.19.163-surface-lts_4.19.163-surface-lts-1_amd64.deb
+Size: 54631490
+SHA256: 2a361a670d02a959575ed087f700b67f586097c1fdf2ac28327a309d718fa692
+SHA1: 6661115d23f8b1347e8b1341071cd2fbf38b69ec
+MD5sum: a19b48537546229c9c3f8b983a8cfbb3
+Description: Linux kernel, version 4.19.163-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.163-surface-lts.
+
+Package: linux-image-4.19.165-surface-lts
+Source: linux-4.19.165-surface-lts
+Version: 4.19.165-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@a9daec1318b5>
+Installed-Size: 243528
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.165-surface-lts/linux-image-4.19.165-surface-lts_4.19.165-surface-lts-1_amd64.deb
+Size: 54626510
+SHA256: b8e3ab2d903ead6ea90ae65413c05e6cf2f620a5e46781a3a3bdfd05ad8b37f3
+SHA1: 448b7c3a348d8d0e7124a2206798c74823e00f8f
+MD5sum: f462a0531d1b03c1509d6e4d9a95ed52
+Description: Linux kernel, version 4.19.165-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.165-surface-lts.
+
+Package: linux-image-5.10.1-surface
+Source: linux-5.10.1-surface
+Version: 5.10.1-surface-1
+Architecture: amd64
+Maintainer: root <root@0763698165ae>
+Installed-Size: 288024
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.1-surface/linux-image-5.10.1-surface_5.10.1-surface-1_amd64.deb
+Size: 65441166
+SHA256: 44d994700512f405d2f44b132a7fb0820aa4e8d6e5ca4f8f572941c61b2d512d
+SHA1: 2c6ea213c6e72c82216102a89665d05f78478fc5
+MD5sum: 0cc28496de5e6daf7bcce94a6af6a9ce
+Description: Linux kernel, version 5.10.1-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.1-surface.
+
+Package: linux-image-5.10.2-surface
+Source: linux-5.10.2-surface
+Version: 5.10.2-surface-1
+Architecture: amd64
+Maintainer: root <root@632c98f107c9>
+Installed-Size: 288048
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.2-surface/linux-image-5.10.2-surface_5.10.2-surface-1_amd64.deb
+Size: 65443690
+SHA256: 2e7f6ba07096946c39602d1ad307819ae5e0c88dd59566c4c665b32fecbdb508
+SHA1: 6373e61ac8664185340a0c86846830736e7dc3f8
+MD5sum: ebc897d2fa7ebc10ae21eaee64acb2bd
+Description: Linux kernel, version 5.10.2-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.2-surface.
+
+Package: linux-image-5.10.5-surface
+Source: linux-5.10.5-surface
+Version: 5.10.5-surface-1
+Architecture: amd64
+Maintainer: root <root@6b445f98509f>
+Installed-Size: 287994
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.5-surface/linux-image-5.10.5-surface_5.10.5-surface-1_amd64.deb
+Size: 65444202
+SHA256: 6c272ef65d77cecc6d1dd8603cc04b12b52d2488794378e20113b3b0e8910851
+SHA1: fff90a9d3334e88c6ebbc0561416bca16d3d0063
+MD5sum: 187c0446320152590e111eec6a24a939
+Description: Linux kernel, version 5.10.5-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.5-surface.
+
+Package: linux-image-5.10.6-surface
+Source: linux-5.10.6-surface
+Version: 5.10.6-surface-1
+Architecture: amd64
+Maintainer: root <root@e956d9f48388>
+Installed-Size: 285236
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.6-surface/linux-image-5.10.6-surface_5.10.6-surface-1_amd64.deb
+Size: 65028014
+SHA256: ec04b583d3eecbc44a6392e20745d5d40227edfe6c5c8c9bffb3ec45ae6636b6
+SHA1: b9bd60a812365a43b0ed1c86867e1cf05d2b140c
+MD5sum: 05fea2e64f887fc3c739c7199cdc2bae
+Description: Linux kernel, version 5.10.6-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.6-surface.
+
+Package: linux-image-5.10.7-surface
+Source: linux-5.10.7-surface
+Version: 5.10.7-surface-1
+Architecture: amd64
+Maintainer: root <root@5bd8969cd2e8>
+Installed-Size: 288008
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.7-surface/linux-image-5.10.7-surface_5.10.7-surface-1_amd64.deb
+Size: 65444130
+SHA256: 9ea76624641f0e38adba68acf91c650801b546507077b72f15deb6a6eb5f52d7
+SHA1: e41bc6aef93c3cbb50fbe31cf6cc7d677306a96b
+MD5sum: e57a9aaf523371d251e09d552df3e1fb
+Description: Linux kernel, version 5.10.7-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.7-surface.
+
+Package: linux-image-5.10.8-surface
+Source: linux-5.10.8-surface
+Version: 5.10.8-surface-1
+Architecture: amd64
+Maintainer: root <root@184c03164254>
+Installed-Size: 288010
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.8-surface/linux-image-5.10.8-surface_5.10.8-surface-1_amd64.deb
+Size: 65440186
+SHA256: 9dfcb318460547d4a47bd5ab74cdc1cf058401d3d2cdf01c591a38721da174f3
+SHA1: 4e87f27270411b1c6c17214ad0fbac1d12aeb437
+MD5sum: 80afaa0f8eda28a1c4790e7e4026e7c7
+Description: Linux kernel, version 5.10.8-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.8-surface.
+
+Package: linux-image-5.7.10-surface
+Source: linux-5.7.10-surface
+Version: 5.7.10-surface-1
+Architecture: amd64
+Maintainer: root <root@4927ac146c21>
+Installed-Size: 272920
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.10-surface/linux-image-5.7.10-surface_5.7.10-surface-1_amd64.deb
+Size: 62661906
+SHA256: 3c334d2860a477acaffd4b3ae948da69374265968091f40fb5d1881700479c79
+SHA1: 68db0504983aaed102f1e84cc3ea8a5faceaa6a0
+MD5sum: da04d750e78016ca85b62a458296b7d2
+Description: Linux kernel, version 5.7.10-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.10-surface.
+
+Package: linux-image-5.7.11-surface
+Source: linux-5.7.11-surface
+Version: 5.7.11-surface-1
+Architecture: amd64
+Maintainer: root <root@72faf7cd7528>
+Installed-Size: 272954
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.11-surface/linux-image-5.7.11-surface_5.7.11-surface-1_amd64.deb
+Size: 62675542
+SHA256: 840082ae5ce9333df567dbd16ca704e79bc335f8b172f0063607e185ed0e9f7d
+SHA1: dfba42ec1c02d7bef8b06e56ae2c801bed059c59
+MD5sum: 55300a3f7e73ae9f3d6df1d36394b8de
+Description: Linux kernel, version 5.7.11-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.11-surface.
+
+Package: linux-image-5.7.12-surface
+Source: linux-5.7.12-surface
+Version: 5.7.12-surface-1
+Architecture: amd64
+Maintainer: root <root@2bd7f0465c41>
+Installed-Size: 273239
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.12-surface/linux-image-5.7.12-surface_5.7.12-surface-1_amd64.deb
+Size: 62751974
+SHA256: 8a4e041c5e030ff10efb5142b277a5cd4d9ffedcd951b4ab29d9a4cda77202ea
+SHA1: f91039e6108615993a138ffd244043bc701d0034
+MD5sum: ae7e918ee5eddbe5849ac9f97e4fe33a
+Description: Linux kernel, version 5.7.12-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.12-surface.
+
+Package: linux-image-5.7.15-surface
+Source: linux-5.7.15-surface
+Version: 5.7.15-surface-1
+Architecture: amd64
+Maintainer: root <root@90ae6e4ea0e2>
+Installed-Size: 273250
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.15-surface/linux-image-5.7.15-surface_5.7.15-surface-1_amd64.deb
+Size: 62755374
+SHA256: 617a7e3d07de09dcd28022d7d090cfd130dfd2e01b62ee3fc61a0c6e02d6ac07
+SHA1: 61d41773a5286ca5bc72ee5ab4578fbd18a5e7be
+MD5sum: 8d5f82a1142d98ce6f3101ac3524fd80
+Description: Linux kernel, version 5.7.15-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.15-surface.
+
+Package: linux-image-5.7.7-surface
+Source: linux-5.7.7-surface
+Version: 5.7.7-surface-2
+Architecture: amd64
+Maintainer: root <root@62f35afa3ce7>
+Installed-Size: 272596
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.7-surface/linux-image-5.7.7-surface_5.7.7-surface-2_amd64.deb
+Size: 62607538
+SHA256: 962a1e2a613e53df2d5d2e02dee6257f29f45cd90c7d922cd7b084b98e336e9f
+SHA1: 0192f83c4e3b69e63937baf4a58f428c929dbb8e
+MD5sum: 5c9197a69af48b4a8190da0050d807cb
+Description: Linux kernel, version 5.7.7-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.7-surface.
+
+Package: linux-image-5.7.8-surface
+Source: linux-5.7.8-surface
+Version: 5.7.8-surface-2
+Architecture: amd64
+Maintainer: root <root@c0e64720ae0f>
+Installed-Size: 272610
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.8-surface/linux-image-5.7.8-surface_5.7.8-surface-2_amd64.deb
+Size: 62606506
+SHA256: 3160168b261f58423d1e46383f5483ec2c589150eea3b45ade31792240a75d6c
+SHA1: 26bbe5712f21613a93a62c39ccbefb07e11f228e
+MD5sum: 45c8bd3b8bb1f169e32b959e915ae66f
+Description: Linux kernel, version 5.7.8-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.8-surface.
+
+Package: linux-image-5.7.9-surface
+Source: linux-5.7.9-surface
+Version: 5.7.9-surface-1
+Architecture: amd64
+Maintainer: root <root@bb3606677427>
+Installed-Size: 274922
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.7.9-surface/linux-image-5.7.9-surface_5.7.9-surface-1_amd64.deb
+Size: 62975338
+SHA256: 38bfb33067222829225beee0e603f717eea2f9627e0a1a3bc0b326d69fa7015b
+SHA1: 53f03d669bafb90e1c6014255a9ac57b25c74859
+MD5sum: f290705992e2de1a110466b288d60241
+Description: Linux kernel, version 5.7.9-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.7.9-surface.
+
+Package: linux-image-5.8.1-surface
+Source: linux-5.8.1-surface
+Version: 5.8.1-surface-2
+Architecture: amd64
+Maintainer: root <root@15d124d09cc9>
+Installed-Size: 278922
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.1-surface/linux-image-5.8.1-surface_5.8.1-surface-2_amd64.deb
+Size: 64031538
+SHA256: c4dd432aceda261f4b404d9a3cde96e39a49db28a81410d5c62c0989b1f05088
+SHA1: 0944139af63f7b6b94b15f6162659e6d0b49b043
+MD5sum: 31830c2fb5f097bb4f2a1dc929257dac
+Description: Linux kernel, version 5.8.1-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.1-surface.
+
+Package: linux-image-5.8.10-surface
+Source: linux-5.8.10-surface
+Version: 5.8.10-surface-3
+Architecture: amd64
+Maintainer: root <root@bdad2f00c397>
+Installed-Size: 278828
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.10-surface/linux-image-5.8.10-surface_5.8.10-surface-3_amd64.deb
+Size: 64016806
+SHA256: 541145b62dda3694164f0090f86e936a01eb4becc40673e34a42bafa3dedbcc9
+SHA1: 5314f204b56cd20f827af951b7351b1a6271fe99
+MD5sum: 39affa3d145a3756ed9b472fa0624809
+Description: Linux kernel, version 5.8.10-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.10-surface.
+
+Package: linux-image-5.8.12-surface
+Source: linux-5.8.12-surface
+Version: 5.8.12-surface-2
+Architecture: amd64
+Maintainer: root <root@b20879272d4b>
+Installed-Size: 278802
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.12-surface/linux-image-5.8.12-surface_5.8.12-surface-2_amd64.deb
+Size: 64018426
+SHA256: 5b3bf6c728742a536bd592be89eb3a23bc22c420f7c4384c6fa882ca476adc61
+SHA1: 0066dcf81deac01dfdbc5ddc296e85cff7bf7cd2
+MD5sum: 4dedac679ffbe69d9bdb48b4161143b5
+Description: Linux kernel, version 5.8.12-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.12-surface.
+
+Package: linux-image-5.8.14-surface
+Source: linux-5.8.14-surface
+Version: 5.8.14-surface-1
+Architecture: amd64
+Maintainer: root <root@17c0c3c38692>
+Installed-Size: 278889
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.14-surface/linux-image-5.8.14-surface_5.8.14-surface-1_amd64.deb
+Size: 64031790
+SHA256: 722be6095fcfb40c23701625e21bebca1b571b989bef52673067caff81f3b877
+SHA1: e219726a11d1cf9863b11979a3e6d9818b42b14f
+MD5sum: beefe47f6744e7e41353a3cd96c99cb9
+Description: Linux kernel, version 5.8.14-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.14-surface.
+
+Package: linux-image-5.8.15-surface
+Source: linux-5.8.15-surface
+Version: 5.8.15-surface-1
+Architecture: amd64
+Maintainer: root <root@98c5dd705f34>
+Installed-Size: 278902
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.15-surface/linux-image-5.8.15-surface_5.8.15-surface-1_amd64.deb
+Size: 64027906
+SHA256: b4c7b85dcfdde91b958c4306231ca8fcc1576a2cc0035334d016b44e4b5a998c
+SHA1: 3188902b37aa13176262fbdc90ac5882422049d1
+MD5sum: 0679bba9b63fb766728aa4739e3a04f6
+Description: Linux kernel, version 5.8.15-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.15-surface.
+
+Package: linux-image-5.8.3-surface
+Source: linux-5.8.3-surface
+Version: 5.8.3-surface-1
+Architecture: amd64
+Maintainer: root <root@f6f3f7e04240>
+Installed-Size: 278953
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.3-surface/linux-image-5.8.3-surface_5.8.3-surface-1_amd64.deb
+Size: 64030954
+SHA256: 392cfab35a16e9e7c927e61c7c1264a0590301318f5251b1b29104f2607c55cb
+SHA1: de938f1a630e74160a838d335213720116118e34
+MD5sum: 6f0f8ef829b4d06654823e34d75c0a33
+Description: Linux kernel, version 5.8.3-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.3-surface.
+
+Package: linux-image-5.8.5-surface
+Source: linux-5.8.5-surface
+Version: 5.8.5-surface-1
+Architecture: amd64
+Maintainer: root <root@bde827be215b>
+Installed-Size: 278966
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.5-surface/linux-image-5.8.5-surface_5.8.5-surface-1_amd64.deb
+Size: 64039006
+SHA256: ee1c973344a56d57b44bf7d4b3e795b23fa1bed91db3678dbf5ce689cdf9ac3b
+SHA1: c36d8737aa516a9fa977d8229b967308083df178
+MD5sum: 7fc0f322ce36f477ca0bc65bf58da7e9
+Description: Linux kernel, version 5.8.5-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.5-surface.
+
+Package: linux-image-5.8.6-surface
+Source: linux-5.8.6-surface
+Version: 5.8.6-surface-1
+Architecture: amd64
+Maintainer: root <root@ccf564328e4d>
+Installed-Size: 278977
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.6-surface/linux-image-5.8.6-surface_5.8.6-surface-1_amd64.deb
+Size: 64042166
+SHA256: d7f4bbbdccb400fd7b50ab0bc4f6a0e53367d29553aaa66e96fa69abfa829c49
+SHA1: 53033c1d11633468cdef00216025fd2e3028e463
+MD5sum: 7f66c500460d58f721b123c7cbe5037b
+Description: Linux kernel, version 5.8.6-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.6-surface.
+
+Package: linux-image-5.8.7-surface
+Source: linux-5.8.7-surface
+Version: 5.8.7-surface-1
+Architecture: amd64
+Maintainer: root <root@41f27a5f0e5e>
+Installed-Size: 279071
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.7-surface/linux-image-5.8.7-surface_5.8.7-surface-1_amd64.deb
+Size: 64044450
+SHA256: 7e9c6060c62927645b02c418165922d0cec51eb142a4dfb9622852c2cd44c3c4
+SHA1: 0db4d4e86d0e2d7f400bd9c2a2aee1b75f92c671
+MD5sum: 9b0194f2da04a5e635e8b88d019545cc
+Description: Linux kernel, version 5.8.7-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.7-surface.
+
+Package: linux-image-5.8.8-surface
+Source: linux-5.8.8-surface
+Version: 5.8.8-surface-1
+Architecture: amd64
+Maintainer: root <root@e2dd547fa2da>
+Installed-Size: 279089
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.8.8-surface/linux-image-5.8.8-surface_5.8.8-surface-1_amd64.deb
+Size: 64049538
+SHA256: 75a2d6632d1b1a05987d85b9f514398914ae1ddbfb0103700526a0f7ad7acdc1
+SHA1: b96c66ab381d8c54c9a805f0510bff0ec51fa961
+MD5sum: d51b6e0180c96d746258965d5ab887ee
+Description: Linux kernel, version 5.8.8-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.8.8-surface.
+
+Package: linux-image-5.9.1-surface
+Source: linux-5.9.1-surface
+Version: 5.9.1-surface-1
+Architecture: amd64
+Maintainer: root <root@7c54c005d122>
+Installed-Size: 280099
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.1-surface/linux-image-5.9.1-surface_5.9.1-surface-1_amd64.deb
+Size: 64135310
+SHA256: f70e7bd71b8901ac7f2c33c28b1d4e926e0195e9b6e0186ec137f2a3953e597c
+SHA1: 44fdc538a09797e280855a12d453fb533c2bea26
+MD5sum: 408e675702b85e8b2b61072637a92e9c
+Description: Linux kernel, version 5.9.1-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.1-surface.
+
+Package: linux-image-5.9.10-surface
+Source: linux-5.9.10-surface
+Version: 5.9.10-surface-1
+Architecture: amd64
+Maintainer: root <root@d256ad3232f2>
+Installed-Size: 282748
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.10-surface/linux-image-5.9.10-surface_5.9.10-surface-1_amd64.deb
+Size: 64571666
+SHA256: a3bd617570d3cd3704792b7f23fb6fed267a17c16f216391a4fcd584753daeae
+SHA1: bf6f2ea85e40f4b3658c7e2003ea205a88844975
+MD5sum: 4db3fc916066c04ae357b7d1f5782939
+Description: Linux kernel, version 5.9.10-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.10-surface.
+
+Package: linux-image-5.9.11-surface
+Source: linux-5.9.11-surface
+Version: 5.9.11-surface-1
+Architecture: amd64
+Maintainer: root <root@8672db94181b>
+Installed-Size: 280215
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.11-surface/linux-image-5.9.11-surface_5.9.11-surface-1_amd64.deb
+Size: 64180746
+SHA256: c51458fb96b911c4010fa8e0592340ba9689444ec1a17e048bcafdc834f935df
+SHA1: 04664025961f4ed0ca816569d56b991c30f0625d
+MD5sum: 04c1e38f5c4afcefc0d3539ec4f65d7f
+Description: Linux kernel, version 5.9.11-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.11-surface.
+
+Package: linux-image-5.9.12-surface
+Source: linux-5.9.12-surface
+Version: 5.9.12-surface-1
+Architecture: amd64
+Maintainer: root <root@59c6a20f2bc0>
+Installed-Size: 282768
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.12-surface/linux-image-5.9.12-surface_5.9.12-surface-1_amd64.deb
+Size: 64567706
+SHA256: 5f5ec500c84a268360e27d00bb2ec7171a0fcbf8794557c09dab8abb4183143c
+SHA1: c694071088be38f43f5c5c9935b971636d3df0c2
+MD5sum: a132420b872120266853855e2f11aa14
+Description: Linux kernel, version 5.9.12-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.12-surface.
+
+Package: linux-image-5.9.13-surface
+Source: linux-5.9.13-surface
+Version: 5.9.13-surface-1
+Architecture: amd64
+Maintainer: root <root@55bf02d50f4b>
+Installed-Size: 280224
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.13-surface/linux-image-5.9.13-surface_5.9.13-surface-1_amd64.deb
+Size: 64174226
+SHA256: a9da77a062f25e336de9e2d5bcca82426b0c3e36ffb0a2e2f91943bb9a620fae
+SHA1: 3643b2ebc3c35c22ae27b4d8347d8e2eaf9c885f
+MD5sum: d8002efec78e87a31b4d2bf698abd95e
+Description: Linux kernel, version 5.9.13-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.13-surface.
+
+Package: linux-image-5.9.14-surface
+Source: linux-5.9.14-surface
+Version: 5.9.14-surface-1
+Architecture: amd64
+Maintainer: root <root@36d2508acee4>
+Installed-Size: 280232
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.14-surface/linux-image-5.9.14-surface_5.9.14-surface-1_amd64.deb
+Size: 64174094
+SHA256: b746c25064e61a5a137e92fe683d0eab16139fed6bbb922b1bf90c4ecb03da8c
+SHA1: d9a2bb637df37fec34a9fad80b6399f8a644c0f6
+MD5sum: 766a64c9f3a83cdb5aa179e5873af1f3
+Description: Linux kernel, version 5.9.14-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.14-surface.
+
+Package: linux-image-5.9.3-surface
+Source: linux-5.9.3-surface
+Version: 5.9.3-surface-1
+Architecture: amd64
+Maintainer: root <root@698e9fd94608>
+Installed-Size: 280125
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.3-surface/linux-image-5.9.3-surface_5.9.3-surface-1_amd64.deb
+Size: 64154026
+SHA256: 2476f75e453ece679f99d2feb67eaf1e23d9e19072eae76ff70e695b46991aeb
+SHA1: 477bbe87ad11d2d5a51dd1ef288cb7562b73b504
+MD5sum: 9c4a014177b292b3ec03fab0d6fef176
+Description: Linux kernel, version 5.9.3-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.3-surface.
+
+Package: linux-image-5.9.6-surface
+Source: linux-5.9.6-surface
+Version: 5.9.6-surface-1
+Architecture: amd64
+Maintainer: root <root@b763d6baa23d>
+Installed-Size: 282719
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.6-surface/linux-image-5.9.6-surface_5.9.6-surface-1_amd64.deb
+Size: 64546206
+SHA256: 6cb1b07169777fa4a4aaf7032c654859e077ba8fbace8a5bf2857f0212c83414
+SHA1: 50483697e7b43b2da11589f54248709291152bec
+MD5sum: 69a1b4eb11e0c03f32a6bd5f4e700f49
+Description: Linux kernel, version 5.9.6-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.6-surface.
+
+Package: linux-image-5.9.8-surface
+Source: linux-5.9.8-surface
+Version: 5.9.8-surface-1
+Architecture: amd64
+Maintainer: root <root@d60ed7ad9b5a>
+Installed-Size: 282731
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.9.8-surface/linux-image-5.9.8-surface_5.9.8-surface-1_amd64.deb
+Size: 64559066
+SHA256: 5202b0da73edb310fdb5044aa6837f35b6cb5748893d48dc1a015509037eae06
+SHA1: a3f2c733f3c6acd2241d7e595ad4c75e07efe08c
+MD5sum: a860995adbd86ba4a999fd338f0bca3f
+Description: Linux kernel, version 5.9.8-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.9.8-surface.
+
+Package: linux-image-surface
+Source: linux-surface
+Version: 5.10.8-surface-1
+Architecture: amd64
+Maintainer: surfacebot <surfacebot@users.noreply.github.com>
+Installed-Size: 7
+Depends: linux-image-5.10.8-surface (= 5.10.8-surface-1)
+Recommends: iptsd
+Homepage: https://github.com/linux-surface/linux-surface
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-surface/linux-image-surface_5.10.8-surface-1_amd64.deb
+Size: 2470
+SHA256: 1271632fc723a38f9ad4ea1f7f3a7b1bc1e120da53d0e4e8b1e659de4b9335c5
+SHA1: 42707df9fb9670c851ccca1a5f69f109eff2eab6
+MD5sum: 5430cc7b7eca038636ab70ebd2726b46
+Description:
+  Meta-package for linux-surface kernel images.
+
+Package: linux-image-surface-lts
+Source: linux-surface-lts
+Version: 4.19.165-surface-lts-1
+Architecture: amd64
+Maintainer: surfacebot <surfacebot@users.noreply.github.com>
+Installed-Size: 7
+Depends: linux-image-4.19.165-surface-lts (= 4.19.165-surface-lts-1)
+Homepage: https://github.com/linux-surface/linux-surface
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-surface-lts/linux-image-surface-lts_4.19.165-surface-lts-1_amd64.deb
+Size: 2474
+SHA256: d10f6ff487180d702e0a40b4346d5a1bf2c6c0ecef855d56cdc920acbfe001dc
+SHA1: eb04c79b12b47bb1ddad22119331c482e84c7f38
+MD5sum: 6855bc34f0ce9bca13d0d8e4edaa6094
+Description:
+  Meta-package for linux-surface kernel images.
+
+Package: linux-surface-secureboot-mok
+Version: 20200929-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 15
+Depends: mokutil
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-surface-secureboot-mok/linux-surface-secureboot-mok_20200929-1_amd64.deb
+Size: 4952
+SHA256: e0c0c7e8f2b165982036211cde559fee6b55de4f8bde0054d6e98b5528ee2f03
+SHA1: 826a5747338ea45ed32463729a1dae0c1f960b31
+MD5sum: 025ed210ab92361c3be227a95a1f8f23
+Description: Secure-boot machine owner key for linux-surface kernels
+
+Package: surface-control
+Version: 0.3.0-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 761
+Depends: libc6 (>= 2.19), libgcc1 (>= 1:4.9.2)
+Priority: optional
+Section: misc
+Filename: pool/main/s/surface-control/surface-control_0.3.0-1_amd64.deb
+Size: 271908
+SHA256: a2ad175f0253ceea25b0531f85f3a8d714bdbb51b47e87244a1f40722b982863
+SHA1: dbc696779f0b3de8f46fe0a1e5a9bacd8ea53f81
+MD5sum: a9f0af4dae513694b29ba9b370ea3ee6
+Description: Control various aspects of Microsoft Surface devices on Linux from the Command-Line
+
+Package: surface-dtx-daemon
+Version: 0.2.0-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 3560
+Depends: libc6 (>= 2.19), libgcc1 (>= 1:4.9.2), libdbus-1-3
+Priority: optional
+Section: misc
+Filename: pool/main/s/surface-dtx-daemon/surface-dtx-daemon_0.2.0-1_amd64.deb
+Size: 821614
+SHA256: ae5c365de3affa30da63dd50831c2a370821e3695d2344f96363fd0859537a23
+SHA1: 0f917f694d5f7d5956ffe80269d44d80a378ccfc
+MD5sum: 5e31571d2c5a9982c378e834f7272f12
+Description: Surface Detachment System (DTX) Daemon
+
+Package: surface-ipts-firmware
+Version: 20200929-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 8828
+Priority: optional
+Section: misc
+Filename: pool/main/s/surface-ipts-firmware/surface-ipts-firmware_20200929-1_amd64.deb
+Size: 251242
+SHA256: 5258a859b9233b3c5a1c5d2c051148c7220e3880fc5082e8a0bda34cf4f5ff9d
+SHA1: 22729880f22be12fd4b7665db0a587b093b11e9d
+MD5sum: d2a6ecab0b6a32b53640877ab4f99b1f
+Description: Intel Precise Touch and Stylus firmware for Microsoft Surface devices
+
