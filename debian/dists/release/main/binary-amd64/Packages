@@ -2306,18 +2306,18 @@ MD5sum: 025ed210ab92361c3be227a95a1f8f23
 Description: Secure-boot machine owner key for linux-surface kernels
 
 Package: surface-control
-Version: 0.3.0-1
+Version: 0.3.1-1
 Architecture: amd64
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Installed-Size: 761
+Installed-Size: 752
 Depends: libc6 (>= 2.19), libgcc1 (>= 1:4.9.2)
 Priority: optional
 Section: misc
-Filename: pool/main/s/surface-control/surface-control_0.3.0-1_amd64.deb
-Size: 271908
-SHA256: a2ad175f0253ceea25b0531f85f3a8d714bdbb51b47e87244a1f40722b982863
-SHA1: dbc696779f0b3de8f46fe0a1e5a9bacd8ea53f81
-MD5sum: a9f0af4dae513694b29ba9b370ea3ee6
+Filename: pool/main/s/surface-control/surface-control_0.3.1-1_amd64.deb
+Size: 265950
+SHA256: 2b85fda5d08e2db9e611e35bf6847bea638a2014054c7f050c69a682d467b009
+SHA1: 44437947f2a2f7a87d0b563bf37f1614493e4e8b
+MD5sum: bc78fe24a79f9ecef4ef8dce2df41f4d
 Description: Control various aspects of Microsoft Surface devices on Linux from the Command-Line
 
 Package: surface-dtx-daemon
