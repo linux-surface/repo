@@ -62,8 +62,8 @@ jobs:
             | grep "browser_download_url.*zst" \
             | cut -d : -f 2,3 \
             | tr -d \" \
-            | wget -qi -
-        yes | pacman -U *.zst
+            | xargs curl -L --output glibc.zst
+        yes | pacman -U glibc.zst
         cd ..
 
         # install dependencies for precheck
