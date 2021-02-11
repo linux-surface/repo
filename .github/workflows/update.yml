@@ -44,7 +44,7 @@ jobs:
   update-arch:
     name: Update Arch Linux repository
     needs: [hold-staging]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container: archlinux
     steps:
     - name: Update repository
