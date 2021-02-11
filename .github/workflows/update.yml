@@ -45,7 +45,7 @@ jobs:
     name: Update Arch Linux repository
     needs: [hold-staging]
     runs-on: ubuntu-latest
-    container: archlinux
+    container: qzed/archlinux:latest
     steps:
     - name: Update repository
       run: |
@@ -55,16 +55,6 @@ jobs:
         path_staging="${path_root}/staging"
         path_current="${path_root}/current"
         path_repo="${path_root}/repo"
-
-        # Workaround because Arch broke its containers due to expecting a new syscall...
-        mkdir -p _workaround && cd _workaround
-        curl -s https://api.github.com/repos/linux-surface/repo/releases/tags/arch-glibc-workaround \
-            | grep "browser_download_url.*zst" \
-            | cut -d : -f 2,3 \
-            | tr -d \" \
-            | xargs curl -L --output glibc.zst
-        yes | pacman -U glibc.zst
-        cd ..
 
         # install dependencies for precheck
         echo "==> Installing pre-check dependencies"
