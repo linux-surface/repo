@@ -509,6 +509,25 @@ Description: Linux kernel headers for 4.19.173-surface-lts on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-4.19.176-surface-lts
+Source: linux-4.19.176-surface-lts
+Version: 4.19.176-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@a74b84142557>
+Installed-Size: 74542
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.176-surface-lts/linux-headers-4.19.176-surface-lts_4.19.176-surface-lts-1_amd64.deb
+Size: 11072278
+SHA256: f52701b9e330c3396cae8507b3dcfdfc66a6f0490c40c19a53838ac0831a0939
+SHA1: 98b9a5931c816e8a2ab98c29addcf18344b01ec6
+MD5sum: 0b122c0d73af1cd56c2aaf5b403d7bef
+Description: Linux kernel headers for 4.19.176-surface-lts on amd64
+ This package provides kernel header files for 4.19.176-surface-lts on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-5.10.1-surface
 Source: linux-5.10.1-surface
 Version: 5.10.1-surface-1
@@ -563,6 +582,25 @@ SHA1: f4287133076618f77cf76a7479df2a9fa04fa8c7
 MD5sum: fbb6f01b5a5c1300fb059020d8ccd362
 Description: Linux kernel headers for 5.10.13-surface on amd64
  This package provides kernel header files for 5.10.13-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-headers-5.10.16-surface
+Source: linux-5.10.16-surface
+Version: 5.10.16-surface-2
+Architecture: amd64
+Maintainer: root <root@2fcb106cb3cf>
+Installed-Size: 50957
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.16-surface/linux-headers-5.10.16-surface_5.10.16-surface-2_amd64.deb
+Size: 8033348
+SHA256: 83dc2cf95fe2e97adb67f4caeb55aff6154195f4dd2c902f914285383cd72b20
+SHA1: 92cfd7ea362b39b39bb4772d5776db699c2fa5e0
+MD5sum: b28a17f53bff85a2be9bde39ee07eb42
+Description: Linux kernel headers for 5.10.16-surface on amd64
+ This package provides kernel header files for 5.10.16-surface on amd64
  .
  This is useful for people who need to build external modules
 
@@ -1157,37 +1195,37 @@ Description: Linux kernel headers for 5.9.8-surface on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 5.10.13-surface-1
+Version: 5.10.16-surface-2
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-5.10.13-surface (= 5.10.13-surface-1)
+Depends: linux-headers-5.10.16-surface (= 5.10.16-surface-2)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-headers-surface_5.10.13-surface-1_amd64.deb
-Size: 2462
-SHA256: 9828724cec4e66cb12ce70c8274b928ca0fde8da0b431cba56a59bb8e0cb001b
-SHA1: 20f71ab0c23bfd80a0a023821a79b4c478ff34bd
-MD5sum: d4a29cc62796b8bc3fd3931cf5baa6f5
+Filename: pool/main/l/linux-surface/linux-headers-surface_5.10.16-surface-2_amd64.deb
+Size: 2458
+SHA256: e5f566167dee860ebe82f34674a54a8f9c275dafdb9a03e3a412115b8a85aac8
+SHA1: f53b6120ba67ef006a7333735d6bc9c49c0cd14d
+MD5sum: afdb7d8a8192b49a076028e14377b902
 Description:
   Meta-package for linux-surface headers.
 
 Package: linux-headers-surface-lts
 Source: linux-surface-lts
-Version: 4.19.173-surface-lts-1
+Version: 4.19.176-surface-lts-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-4.19.173-surface-lts (= 4.19.173-surface-lts-1)
+Depends: linux-headers-4.19.176-surface-lts (= 4.19.176-surface-lts-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface-lts/linux-headers-surface-lts_4.19.173-surface-lts-1_amd64.deb
+Filename: pool/main/l/linux-surface-lts/linux-headers-surface-lts_4.19.176-surface-lts-1_amd64.deb
 Size: 2474
-SHA256: 807e3a6ec3c1d944cc8db80cbb77cbff9c4eedd35e3e3d960ec64ca049f00dd7
-SHA1: 5e4f6fe2631c03c8574734913e2b45148d092176
-MD5sum: 3e9aff20ba776abaac0e1f41e7ab499a
+SHA256: e321ce5df5e0103e3c0b9a05b5ffba0c5e1ea077626ee43e20604ff3c0c8aaf7
+SHA1: ab7e4a890cc6eadc9f4c7641e524ecbec0a58d29
+MD5sum: 590e811e839c559b7c95b49cefe61a28
 Description:
   Meta-package for linux-surface headers.
 
@@ -1641,6 +1679,24 @@ Description: Linux kernel, version 4.19.173-surface-lts
  This package contains the Linux kernel, modules and corresponding other
  files, version: 4.19.173-surface-lts.
 
+Package: linux-image-4.19.176-surface-lts
+Source: linux-4.19.176-surface-lts
+Version: 4.19.176-surface-lts-1
+Architecture: amd64
+Maintainer: root <root@a74b84142557>
+Installed-Size: 243581
+Homepage: http://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-4.19.176-surface-lts/linux-image-4.19.176-surface-lts_4.19.176-surface-lts-1_amd64.deb
+Size: 54652674
+SHA256: b9a6e8c24edfd24f585a7ddffeccde29e83b754f17c651839a9341bb2e721fe5
+SHA1: 3dd35f858e7290980cac9b59af08dcc0d9dd11d8
+MD5sum: d8f21e0cb5dddae275b1d2791da277bb
+Description: Linux kernel, version 4.19.176-surface-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 4.19.176-surface-lts.
+
 Package: linux-image-5.10.1-surface
 Source: linux-5.10.1-surface
 Version: 5.10.1-surface-1
@@ -1694,6 +1750,24 @@ MD5sum: bd746604f8c0f671f41bec1376d60b01
 Description: Linux kernel, version 5.10.13-surface
  This package contains the Linux kernel, modules and corresponding other
  files, version: 5.10.13-surface.
+
+Package: linux-image-5.10.16-surface
+Source: linux-5.10.16-surface
+Version: 5.10.16-surface-2
+Architecture: amd64
+Maintainer: root <root@2fcb106cb3cf>
+Installed-Size: 288125
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.16-surface/linux-image-5.10.16-surface_5.10.16-surface-2_amd64.deb
+Size: 65471810
+SHA256: b26ebe043385bac89f4f27e1684b73033c2a35d89394029a0e1e121813156ec2
+SHA1: 64fb9f07a33ea767278f3666c35db54d37561e9d
+MD5sum: 82d735df993142da8669c4927aa8b763
+Description: Linux kernel, version 5.10.16-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.16-surface.
 
 Package: linux-image-5.10.2-surface
 Source: linux-5.10.2-surface
@@ -2255,38 +2329,38 @@ Description: Linux kernel, version 5.9.8-surface
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 5.10.13-surface-1
+Version: 5.10.16-surface-2
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-5.10.13-surface (= 5.10.13-surface-1)
+Depends: linux-image-5.10.16-surface (= 5.10.16-surface-2)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-image-surface_5.10.13-surface-1_amd64.deb
-Size: 2474
-SHA256: a7aef7ab6dfeb94e0f1fb54a24b04fc6fea41d2919c93c6171a5f94cf0addad4
-SHA1: fab66a8c0ad786c0864d259de3d258edb4047b7c
-MD5sum: 4a5a595cd669fb3169b9d16ab6d098de
+Filename: pool/main/l/linux-surface/linux-image-surface_5.10.16-surface-2_amd64.deb
+Size: 2470
+SHA256: c833841ec3c650719e1f9f09eef86341ef69cd2eb51d7e56eefa9f7e88c77629
+SHA1: a77f56166cce90d396cea5cc1c64b36ceb15ae7c
+MD5sum: 69c48f68f811d33092110b2ec6614e91
 Description:
   Meta-package for linux-surface kernel images.
 
 Package: linux-image-surface-lts
 Source: linux-surface-lts
-Version: 4.19.173-surface-lts-1
+Version: 4.19.176-surface-lts-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-4.19.173-surface-lts (= 4.19.173-surface-lts-1)
+Depends: linux-image-4.19.176-surface-lts (= 4.19.176-surface-lts-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface-lts/linux-image-surface-lts_4.19.173-surface-lts-1_amd64.deb
+Filename: pool/main/l/linux-surface-lts/linux-image-surface-lts_4.19.176-surface-lts-1_amd64.deb
 Size: 2474
-SHA256: 53777d29199f33586ebdf7e28aeeb2f3d8c07b138072d9be2a38996dbe756886
-SHA1: 2d8053fbdb48bc416a58e935626bb63c53256c5b
-MD5sum: f349c026354f84303872537c27f58766
+SHA256: e6374268c188cfb176cc20f101a900b83df907bb9e7eb688ffbeb12a29896187
+SHA1: 4994b55c04a0a032775c3572d316eb15f4c5a683
+MD5sum: c1e0ffb2e6718772e19ba9cd2141f66f
 Description:
   Meta-package for linux-surface kernel images.
 
