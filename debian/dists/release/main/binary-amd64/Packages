@@ -604,6 +604,25 @@ Description: Linux kernel headers for 5.10.16-surface on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-5.10.17-surface
+Source: linux-5.10.17-surface
+Version: 5.10.17-surface-1
+Architecture: amd64
+Maintainer: root <root@60fe0e716c6b>
+Installed-Size: 50960
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.17-surface/linux-headers-5.10.17-surface_5.10.17-surface-1_amd64.deb
+Size: 8034852
+SHA256: cee862d2a3cac6a18fe2fe101811b94e2630629d2e3c180f36b043ce02ccfe67
+SHA1: 12db06b6c3b805b80a9cbe5a586550c80c8d3a75
+MD5sum: 8536287bcfdf40171e973ab59a6c2d0e
+Description: Linux kernel headers for 5.10.17-surface on amd64
+ This package provides kernel header files for 5.10.17-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-5.10.2-surface
 Source: linux-5.10.2-surface
 Version: 5.10.2-surface-1
@@ -1195,19 +1214,19 @@ Description: Linux kernel headers for 5.9.8-surface on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 5.10.16-surface-2
+Version: 5.10.17-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-5.10.16-surface (= 5.10.16-surface-2)
+Depends: linux-headers-5.10.17-surface (= 5.10.17-surface-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-headers-surface_5.10.16-surface-2_amd64.deb
+Filename: pool/main/l/linux-surface/linux-headers-surface_5.10.17-surface-1_amd64.deb
 Size: 2458
-SHA256: e5f566167dee860ebe82f34674a54a8f9c275dafdb9a03e3a412115b8a85aac8
-SHA1: f53b6120ba67ef006a7333735d6bc9c49c0cd14d
-MD5sum: afdb7d8a8192b49a076028e14377b902
+SHA256: ba2eccc00f1809acec69a72b61f447114f6781f90e60e5e8eb7ab1f1e1825260
+SHA1: 991a85b7cd46a24ac5d78e57b032f3a42691ab2a
+MD5sum: c807ffe9262dff1588479a433defdba1
 Description:
   Meta-package for linux-surface headers.
 
@@ -1769,6 +1788,24 @@ Description: Linux kernel, version 5.10.16-surface
  This package contains the Linux kernel, modules and corresponding other
  files, version: 5.10.16-surface.
 
+Package: linux-image-5.10.17-surface
+Source: linux-5.10.17-surface
+Version: 5.10.17-surface-1
+Architecture: amd64
+Maintainer: root <root@60fe0e716c6b>
+Installed-Size: 288135
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.10.17-surface/linux-image-5.10.17-surface_5.10.17-surface-1_amd64.deb
+Size: 65467694
+SHA256: 17a583962676af7e957148e8c384dadbe0267fd6d00bacb122e79f8435505d03
+SHA1: d85ef16b9f381373b84ad7ffadc485f82c07f55e
+MD5sum: 4d5eac5d765560d5edcc340471ef8adc
+Description: Linux kernel, version 5.10.17-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.10.17-surface.
+
 Package: linux-image-5.10.2-surface
 Source: linux-5.10.2-surface
 Version: 5.10.2-surface-1
@@ -2329,20 +2366,20 @@ Description: Linux kernel, version 5.9.8-surface
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 5.10.16-surface-2
+Version: 5.10.17-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-5.10.16-surface (= 5.10.16-surface-2)
+Depends: linux-image-5.10.17-surface (= 5.10.17-surface-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-image-surface_5.10.16-surface-2_amd64.deb
+Filename: pool/main/l/linux-surface/linux-image-surface_5.10.17-surface-1_amd64.deb
 Size: 2470
-SHA256: c833841ec3c650719e1f9f09eef86341ef69cd2eb51d7e56eefa9f7e88c77629
-SHA1: a77f56166cce90d396cea5cc1c64b36ceb15ae7c
-MD5sum: 69c48f68f811d33092110b2ec6614e91
+SHA256: e3c922505d1235a78c9fbb01edd6d5ebad399e3fa3807d46efb459e281d46758
+SHA1: 8f29b14bd94210f4287d67708e2f09bb1bcbc99e
+MD5sum: 2619dbf97082da7c39ce1700e744ed88
 Description:
   Meta-package for linux-surface kernel images.
 
