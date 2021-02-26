@@ -14,21 +14,21 @@ MD5sum: 84b66fed34c65a54f8ae192363593137
 Description: Userspace daemon for Intel Precise Touch & Stylus
 
 Package: libwacom-surface
-Version: 1.8-1
+Version: 1.9-1
 Architecture: amd64
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Installed-Size: 921
+Installed-Size: 944
 Depends: libc6 (>= 2.8), libglib2.0-0 (>= 2.24.0), libgudev-1.0-0 (>= 146)
 Conflicts: libwacom-bin, libwacom-common, libwacom-dev, libwacom2
 Replaces: libwacom-bin, libwacom-common, libwacom-dev, libwacom2
-Provides: libwacom-bin (= 1.8-1), libwacom-common (= 1.8-1), libwacom-dev (= 1.8-1), libwacom2 (= 1.8-1)
+Provides: libwacom-bin (= 1.9-1), libwacom-common (= 1.9-1), libwacom-dev (= 1.9-1), libwacom2 (= 1.9-1)
 Priority: optional
 Section: libs
-Filename: pool/main/libw/libwacom-surface/libwacom-surface_1.8-1_amd64.deb
-Size: 82556
-SHA256: c1b797a5ddf5ca4d899047e22e91f3c7c1fa7286d85123e3b52879d148a5864f
-SHA1: 7af5d80920054f5b1309dcdb05b362117724b8b3
-MD5sum: beeb939c1aa6eb92ba64639bc719e319
+Filename: pool/main/libw/libwacom-surface/libwacom-surface_1.9-1_amd64.deb
+Size: 84244
+SHA256: 2326e991cf15b401f122402a2682288e995a1c07410d398539550f5ee2fca576
+SHA1: 7322ba960cdd94303bfca6b7953f98f23ba05ac7
+MD5sum: 601e05d6321085b6126b61e2c2f36b1f
 Description: Wacom model feature query library
  libwacom is a library to identify wacom tablets and their model-specific
  features. It provides easy access to information such as "is this a built-in
