@@ -45,7 +45,7 @@ jobs:
     name: Update Arch Linux repository
     needs: [hold-staging]
     runs-on: ubuntu-latest
-    container: archlinux
+    container: qzed/archlinux:latest
     steps:
     - name: Update repository
       run: |
