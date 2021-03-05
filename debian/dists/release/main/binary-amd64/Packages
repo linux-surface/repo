@@ -737,6 +737,25 @@ Description: Linux kernel headers for 5.10.8-surface on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-5.11.2-surface
+Source: linux-5.11.2-surface
+Version: 5.11.2-surface-1
+Architecture: amd64
+Maintainer: root <root@62752d80fe2b>
+Installed-Size: 51448
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.11.2-surface/linux-headers-5.11.2-surface_5.11.2-surface-1_amd64.deb
+Size: 8240892
+SHA256: 447ad03b2929d406875464558283fbcafbce631d62aa697643bc214a71e38f97
+SHA1: 54850bebdc2f94906662050273ff450146b59a6d
+MD5sum: fbf96aa2047ebda10ee164c5b6d3aa9b
+Description: Linux kernel headers for 5.11.2-surface on amd64
+ This package provides kernel header files for 5.11.2-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-5.7.10-surface
 Source: linux-5.7.10-surface
 Version: 5.7.10-surface-1
@@ -1233,19 +1252,19 @@ Description: Linux kernel headers for 5.9.8-surface on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 5.10.17-surface-1
+Version: 5.11.2-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-5.10.17-surface (= 5.10.17-surface-1)
+Depends: linux-headers-5.11.2-surface (= 5.11.2-surface-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-headers-surface_5.10.17-surface-1_amd64.deb
+Filename: pool/main/l/linux-surface/linux-headers-surface_5.11.2-surface-1_amd64.deb
 Size: 2458
-SHA256: ba2eccc00f1809acec69a72b61f447114f6781f90e60e5e8eb7ab1f1e1825260
-SHA1: 991a85b7cd46a24ac5d78e57b032f3a42691ab2a
-MD5sum: c807ffe9262dff1588479a433defdba1
+SHA256: d18327665259df55f17db3c48bece23bae5a7c3f2ba08dc80ddb691280200509
+SHA1: b9c1db02a17b4643a5a546ca150390d36aef87a7
+MD5sum: 12cd348e78306cc7f4f108f70696a4a1
 Description:
   Meta-package for linux-surface headers.
 
@@ -1933,6 +1952,24 @@ Description: Linux kernel, version 5.10.8-surface
  This package contains the Linux kernel, modules and corresponding other
  files, version: 5.10.8-surface.
 
+Package: linux-image-5.11.2-surface
+Source: linux-5.11.2-surface
+Version: 5.11.2-surface-1
+Architecture: amd64
+Maintainer: root <root@62752d80fe2b>
+Installed-Size: 304357
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.11.2-surface/linux-image-5.11.2-surface_5.11.2-surface-1_amd64.deb
+Size: 66736586
+SHA256: 511c3b79d43d1a8f0e8f175f40bd3656632994e5461b834fa41e0ebbf2ee433b
+SHA1: ad40483c563b3acd9c88cbc4cd6b156d5029b3d6
+MD5sum: eb225bc783f05aec7c0a7db7eaee542f
+Description: Linux kernel, version 5.11.2-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.11.2-surface.
+
 Package: linux-image-5.7.10-surface
 Source: linux-5.7.10-surface
 Version: 5.7.10-surface-1
@@ -2403,20 +2440,20 @@ Description: Linux kernel, version 5.9.8-surface
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 5.10.17-surface-1
+Version: 5.11.2-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-5.10.17-surface (= 5.10.17-surface-1)
+Depends: linux-image-5.11.2-surface (= 5.11.2-surface-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-image-surface_5.10.17-surface-1_amd64.deb
-Size: 2470
-SHA256: e3c922505d1235a78c9fbb01edd6d5ebad399e3fa3807d46efb459e281d46758
-SHA1: 8f29b14bd94210f4287d67708e2f09bb1bcbc99e
-MD5sum: 2619dbf97082da7c39ce1700e744ed88
+Filename: pool/main/l/linux-surface/linux-image-surface_5.11.2-surface-1_amd64.deb
+Size: 2466
+SHA256: 2cafe36144fd0dd03250fc607a590e35a6cb6e809af3ac3527e41f21c386b4ca
+SHA1: bd0c21fe41ea881029e0163c435596d9d8f3810e
+MD5sum: dc39f96dda0891a714c7ffff77049e7a
 Description:
   Meta-package for linux-surface kernel images.
 
