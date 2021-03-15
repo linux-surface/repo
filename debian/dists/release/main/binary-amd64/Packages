@@ -1,16 +1,16 @@
 Package: iptsd
-Version: 0.3.1-1
+Version: 0.4-1
 Architecture: amd64
 Maintainer: Dorian Stoll <dorian.stoll@tmsp.io>
-Installed-Size: 89
+Installed-Size: 91
 Depends: systemd, udev, libinih1
 Priority: optional
 Section: misc
-Filename: pool/main/i/iptsd/iptsd_0.3.1-1_amd64.deb
-Size: 20940
-SHA256: c9ad3a45a4995d6bfc48c8727542466b5bcd1b3566772e52795c66d9631c36d3
-SHA1: 3b651351348ad77b13c24834b5d7db5cc00736cf
-MD5sum: 84b66fed34c65a54f8ae192363593137
+Filename: pool/main/i/iptsd/iptsd_0.4-1_amd64.deb
+Size: 21716
+SHA256: 0fe1812d64c3302a60952afeebbc84fde4695d14ca2b7347b10f92e0fb0ded9a
+SHA1: 0d5a21a4dd531971087e3b5d34088a8002dfd95a
+MD5sum: 25182cf1f18880afc857947e40579ad4
 Description: Userspace daemon for Intel Precise Touch & Stylus
 
 Package: libwacom-surface
@@ -794,6 +794,25 @@ Description: Linux kernel headers for 5.11.5-surface on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-5.11.6-surface
+Source: linux-5.11.6-surface
+Version: 5.11.6-surface-1
+Architecture: amd64
+Maintainer: root <root@4c12ced17edc>
+Installed-Size: 51383
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.11.6-surface/linux-headers-5.11.6-surface_5.11.6-surface-1_amd64.deb
+Size: 8239012
+SHA256: 4f51b88651eaf839580279ce85829519c30a4bffa0a210a0b8f2066ce3519508
+SHA1: 319027eca1c7caa95be00e71c2effaaa908216f8
+MD5sum: 4c5b6fee958a5de7986ef069ec52aab8
+Description: Linux kernel headers for 5.11.6-surface on amd64
+ This package provides kernel header files for 5.11.6-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-5.7.10-surface
 Source: linux-5.7.10-surface
 Version: 5.7.10-surface-1
@@ -1290,19 +1309,19 @@ Description: Linux kernel headers for 5.9.8-surface on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 5.11.5-surface-1
+Version: 5.11.6-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-5.11.5-surface (= 5.11.5-surface-1)
+Depends: linux-headers-5.11.6-surface (= 5.11.6-surface-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-headers-surface_5.11.5-surface-1_amd64.deb
-Size: 2458
-SHA256: 99ae2a1522846d025ee37a7eb88bd3083acf804cfdcd48fce9b5956934c194a5
-SHA1: 343fae14ede72edb4f902a41897a605c20e20395
-MD5sum: cee6c2f4ea3bc309a61ea9b59d021a2c
+Filename: pool/main/l/linux-surface/linux-headers-surface_5.11.6-surface-1_amd64.deb
+Size: 2454
+SHA256: ad2bd0979f517047004173da3086eed2036897d737f17395f53d54f04c58d6e3
+SHA1: 35912fa6ed0ac514e251f1c047fef57b0d37b36f
+MD5sum: ffcd8a5758930f94734c92f14e01b1ae
 Description:
   Meta-package for linux-surface headers.
 
@@ -2044,6 +2063,24 @@ Description: Linux kernel, version 5.11.5-surface
  This package contains the Linux kernel, modules and corresponding other
  files, version: 5.11.5-surface.
 
+Package: linux-image-5.11.6-surface
+Source: linux-5.11.6-surface
+Version: 5.11.6-surface-1
+Architecture: amd64
+Maintainer: root <root@4c12ced17edc>
+Installed-Size: 303747
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: kernel
+Filename: pool/main/l/linux-5.11.6-surface/linux-image-5.11.6-surface_5.11.6-surface-1_amd64.deb
+Size: 66654086
+SHA256: d9a9cb5b5fb35f3a4331d113b992481bafa28271ca444bd261c68b651f21f019
+SHA1: 03bd92ca3094fb643ed438b5c8703bbccc8f9d90
+MD5sum: 57a3bae6f738b5f28ced4df7db72be35
+Description: Linux kernel, version 5.11.6-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 5.11.6-surface.
+
 Package: linux-image-5.7.10-surface
 Source: linux-5.7.10-surface
 Version: 5.7.10-surface-1
@@ -2514,20 +2551,20 @@ Description: Linux kernel, version 5.9.8-surface
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 5.11.5-surface-1
+Version: 5.11.6-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-5.11.5-surface (= 5.11.5-surface-1)
+Depends: linux-image-5.11.6-surface (= 5.11.6-surface-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: kernel
-Filename: pool/main/l/linux-surface/linux-image-surface_5.11.5-surface-1_amd64.deb
+Filename: pool/main/l/linux-surface/linux-image-surface_5.11.6-surface-1_amd64.deb
 Size: 2470
-SHA256: 18017c68a689f42cf5002a5928392c1b1e65cd6a7ca50a9f9ad4e30f0074b194
-SHA1: 02245710d6dafbe7ad214dba70842ae88c16fd11
-MD5sum: 00c1698094648285dc84de67430babb8
+SHA256: 315fb5c92e313b310ffa0e41f6562d1a031e436b966f1f8a1e2c63c5e804e421
+SHA1: 4d6cc4f0b4ac309d9b0ae7ebfe17c684d1af573a
+MD5sum: 15fffdf2b3211b451f83901003c6a6dc
 Description:
   Meta-package for linux-surface kernel images.
 
