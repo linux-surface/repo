@@ -1,0 +1,1114 @@
+name: Update repositories
+
+on:
+  schedule:
+  - cron: '0 0 */1 * *'
+
+  repository_dispatch:
+  workflow_dispatch:
+
+env:
+  TOKEN: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
+  BRANCH_HOLD: u/hold
+  BRANCH_CURRENT: u/current
+  BRANCH_STAGING: u/staging
+  BRANCH_REPO: repo
+  GPG_KEY: ${{ secrets.LINUX_SURFACE_GPG_KEY }}
+  GPG_KEY_ID: 56C464BAAC421453
+
+jobs:
+  hold-staging:
+    name: Hold current staging state
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hold current staging state
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # early exit if previous runs have failed or concurrently running
+        if [ $(git ls-remote --heads "${repo}" "${BRANCH_HOLD}" | wc -l) = "1" ]; then
+          echo "==> Holding branch already exists."
+          echo "==> This means a previous run has failed or is still active."
+          echo "==> Please fix any errors and then manually delete branch '${BRANCH_HOLD}'."
+          exit 1
+        fi
+
+        # clone, merge, and push
+        git clone -b "${BRANCH_STAGING}" "${repo}" .
+        git switch -c "${BRANCH_HOLD}"
+        git push --set-upstream origin "${BRANCH_HOLD}"
+
+  update-arch:
+    name: Update Arch Linux repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container: archlinux
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        pacman -Syu --noconfirm
+        pacman -Sy --noconfirm git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/arch" "${path_current}/arch" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        pacman -Sy --noconfirm base-devel wget
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+        cd "${path_repo}/arch"
+
+        # copy blob files
+        echo "==> Updating blobs"
+        cp "${path_staging}/arch/"* .
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        files=$(find . -name '*.pkg.tar.zst' | sort -V)
+        files=(${files})
+        repo-add -n -R linux-surface.db.tar.gz ${files[@]}
+
+        # remove blob files without binary
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # sign repo
+        echo "==> Signing repo"
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+        if [ -f 'linux-surface.db.sig' ]; then
+          rm linux-surface.db.sig
+          rm linux-surface.db.tar.gz.sig
+          rm linux-surface.files.sig
+          rm linux-surface.files.tar.gz.sig
+        fi
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.db
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.db.tar.gz
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.files
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.files.tar.gz
+
+        # commit changes
+        echo "==> Committing"
+        git switch -c "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Arch Linux repository"
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/arch"
+
+        for blob in $(find . -name '*.blob'); do
+          file="${blob%.blob}"
+          if [ ! -f "${path_repo}/arch/${file}" ]; then
+            rm -f "${blob}"
+            rm -f "${file}.sig"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git switch -c "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Arch Linux blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-arch-aarch64:
+    name: Update Arch Linux AArch64 repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container: archlinux
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        pacman -Syu --noconfirm
+        pacman -Sy --noconfirm git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/arch-aarch64" "${path_current}/arch-aarch64" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        pacman -Sy --noconfirm base-devel wget
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+        cd "${path_repo}/arch-aarch64"
+
+        # copy blob files
+        echo "==> Updating blobs"
+        cp "${path_staging}/arch-aarch64/"* .
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        files=$(find . -name '*.pkg.tar.zst' | sort -V)
+        files=(${files})
+        repo-add -n -R linux-surface.db.tar.gz ${files[@]}
+
+        # remove blob files without binary
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # sign repo
+        echo "==> Signing repo"
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+        if [ -f 'linux-surface.db.sig' ]; then
+          rm linux-surface.db.sig
+          rm linux-surface.db.tar.gz.sig
+          rm linux-surface.files.sig
+          rm linux-surface.files.tar.gz.sig
+        fi
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.db
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.db.tar.gz
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.files
+        gpg --detach-sign --batch --no-tty --no-armor -u $GPG_KEY_ID linux-surface.files.tar.gz
+
+        # commit changes
+        echo "==> Committing"
+        git switch -c "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Arch Linux AArch64 repository"
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/arch-aarch64"
+
+        for blob in $(find . -name '*.blob'); do
+          file="${blob%.blob}"
+          if [ ! -f "${path_repo}/arch-aarch64/${file}" ]; then
+            rm -f "${blob}"
+            rm -f "${file}.sig"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git switch -c "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Arch Linux AArch64 blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-debian:
+    name: Update Debian repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container: debian:sid
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        sed 's/^deb /deb-src /' /etc/apt/sources.list >> /etc/apt/sources.list
+        apt-get -y update
+        apt-get -y install git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/debian" "${path_current}/debian" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        apt-get -y install wget reprepro
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        cd "${path_staging}/debian"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # download blob files in repo (needed for checks later)
+        cd "${path_repo}/debian"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          file="${blob%.blob}"
+          wget -O "${file}" "https://github.com/linux-surface/$repo/releases/download/$vers" || rm -f "${file}" || continue
+        done
+
+        # remove any binary files not present in staging
+        cd "${path_repo}/debian"
+        for deb in $(find . -name '*.deb'); do
+          base="$(basename -- "${deb}")"
+          if [ ! -f "${path_staging}/debian/${base}" ]; then
+            rm -f "${deb}"
+          fi
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        cd "${path_repo}/debian"
+
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+
+        for pkg in "${path_staging}"/debian/*.deb; do
+          reprepro --basedir . -S misc -P optional --component main includedeb release "${pkg}"
+        done
+
+        rm -f "${path_staging}"/debian/*.deb
+
+        # remove old blobs without bins
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # remove old packages without deb files
+        reprepro --basedir . --component main list release | while read -r item; do
+          pkgname="$(echo "${item}" | awk -F ' ' '{print $2}')"
+          pkgver="$(echo "${item}" | awk -F ' ' '{print $3}')"
+
+          if ! test -n "$(find . -name "${pkgname}_${pkgver}_"'*.deb')"; then
+            reprepro --basedir . --component main remove release "${pkgname}"
+          fi
+        done
+
+        # update/add blobs for bins
+        for file in $(find . -name '*.deb'); do
+          file_base="$(basename "${file}")"
+          blobpath="${path_staging}/debian/${file_base}.blob"
+
+          if [ -f "${blobpath}" ]; then
+            cp "${blobpath}" "${file}.blob"
+          fi
+        done
+
+        # commit changes
+        echo "==> Committing"
+        git switch -c "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Debian repository" || true    # ignore empty commits
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/debian"
+
+        for blob in $(find . -name '*.blob'); do
+          file_base="$(basename "${blob%.blob}")"
+
+          if [ ! $(find "${path_repo}/debian" -name "${file_base}") ]; then
+            rm "${blob}"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git switch -c "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Debian blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-f37:
+    name: Update Fedora 37 repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:37
+      options: --security-opt seccomp=unconfined
+    env:
+      FEDORA: 37
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        dnf distro-sync -y
+        dnf install -y git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/fedora/f${FEDORA}" "${path_current}/fedora/f${FEDORA}" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        dnf install -y createrepo_c git findutils wget
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+        cd "${path_repo}/fedora/f${FEDORA}"
+
+        # copy blob files
+        echo "==> Updating blobs"
+        cp "${path_staging}/fedora/f${FEDORA}/"* .
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        createrepo_c --xz --update --verbose .
+
+        # remove blob files without binary
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # sign repo
+        echo "==> Signing repo"
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+        if [ -f 'repodata/repomd.xml.asc' ]; then
+          rm repodata/repomd.xml.asc
+        fi
+        gpg --detach-sign --batch --no-tty --armor -u $GPG_KEY_ID repodata/repomd.xml
+
+        # commit changes
+        echo "==> Committing"
+        git checkout -b "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Fedora ${FEDORA} repository"
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/fedora/f${FEDORA}"
+
+        for blob in $(find . -name '*.blob'); do
+          file="${blob%.blob}"
+          if [ ! -f "${path_repo}/fedora/f${FEDORA}/${file}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git checkout -b "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Fedora ${FEDORA} blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-f38:
+    name: Update Fedora 38 repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:38
+      options: --security-opt seccomp=unconfined
+    env:
+      FEDORA: 38
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        dnf distro-sync -y
+        dnf install -y git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/fedora/f${FEDORA}" "${path_current}/fedora/f${FEDORA}" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        dnf install -y createrepo_c git findutils wget
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+        mkdir -p "${path_repo}/fedora/f${FEDORA}"
+        cd "${path_repo}/fedora/f${FEDORA}"
+
+        # copy blob files
+        echo "==> Updating blobs"
+        mkdir -p "${path_staging}/fedora/f${FEDORA}/"
+        cp "${path_staging}/fedora/f${FEDORA}/"* . || :
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        createrepo_c --xz --update --verbose .
+
+        # remove blob files without binary
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # sign repo
+        echo "==> Signing repo"
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+        if [ -f 'repodata/repomd.xml.asc' ]; then
+          rm repodata/repomd.xml.asc
+        fi
+        gpg --detach-sign --batch --no-tty --armor -u $GPG_KEY_ID repodata/repomd.xml
+
+        # commit changes
+        echo "==> Committing"
+        git checkout -b "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Fedora ${FEDORA} repository"
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/fedora/f${FEDORA}"
+
+        for blob in $(find . -name '*.blob'); do
+          file="${blob%.blob}"
+          if [ ! -f "${path_repo}/fedora/f${FEDORA}/${file}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git checkout -b "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Fedora ${FEDORA} blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-f39:
+    name: Update Fedora 39 repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:39
+      options: --security-opt seccomp=unconfined
+    env:
+      FEDORA: 39
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        dnf distro-sync -y
+        dnf install -y git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/fedora/f${FEDORA}" "${path_current}/fedora/f${FEDORA}" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        dnf install -y createrepo_c git findutils wget
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+        mkdir -p "${path_repo}/fedora/f${FEDORA}"
+        cd "${path_repo}/fedora/f${FEDORA}"
+
+        # copy blob files
+        echo "==> Updating blobs"
+        mkdir -p "${path_staging}/fedora/f${FEDORA}/"
+        cp "${path_staging}/fedora/f${FEDORA}/"* . || :
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        createrepo_c --xz --update --verbose .
+
+        # remove blob files without binary
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # sign repo
+        echo "==> Signing repo"
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+        if [ -f 'repodata/repomd.xml.asc' ]; then
+          rm repodata/repomd.xml.asc
+        fi
+        gpg --detach-sign --batch --no-tty --armor -u $GPG_KEY_ID repodata/repomd.xml
+
+        # commit changes
+        echo "==> Committing"
+        git checkout -b "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Fedora ${FEDORA} repository"
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/fedora/f${FEDORA}"
+
+        for blob in $(find . -name '*.blob'); do
+          file="${blob%.blob}"
+          if [ ! -f "${path_repo}/fedora/f${FEDORA}/${file}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git checkout -b "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Fedora ${FEDORA} blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-f40:
+    name: Update Fedora 40 repository
+    needs: [hold-staging]
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:40
+      options: --security-opt seccomp=unconfined
+    env:
+      FEDORA: 40
+    steps:
+    - name: Update repository
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        path_root="${PWD}"
+        path_staging="${path_root}/staging"
+        path_current="${path_root}/current"
+        path_repo="${path_root}/repo"
+
+        # install dependencies for precheck
+        echo "==> Installing pre-check dependencies"
+        dnf distro-sync -y
+        dnf install -y git diffutils
+
+        # fetch 'staging' and 'current' branch
+        echo "==> Setting up repositories"
+        git clone -b "${BRANCH_CURRENT}" "${repo}" "${path_current}"
+        cp -a "${path_current}" "${path_staging}"
+        cd "${path_staging}"
+        git checkout "${BRANCH_HOLD}"
+        cd "${path_root}"
+
+        # check for changs, exit if there's nothing to do
+        echo "==> Checking for changes"
+        diff -arq "${path_staging}/fedora/f${FEDORA}" "${path_current}/fedora/f${FEDORA}" && exit 0
+        echo "==> Changes detected: continuing"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # install dependencies
+        echo "==> Installing dependencies"
+        dnf install -y createrepo_c git findutils wget
+
+        # clone repo branch
+        echo "==> Cloning package repository"
+        git clone -b "${BRANCH_REPO}" "${repo}" "${path_repo}"
+        mkdir -p "${path_repo}/fedora/f${FEDORA}"
+        cd "${path_repo}/fedora/f${FEDORA}"
+
+        # copy blob files
+        echo "==> Updating blobs"
+        mkdir -p "${path_staging}/fedora/f${FEDORA}/"
+        cp "${path_staging}/fedora/f${FEDORA}/"* . || :
+
+        # download blob files, ignore ones that are not present any more
+        echo "==> Downloading blobs"
+        for blob in $(find . -name '*.blob'); do
+          blobref="$(cat $blob)"
+          repo="${blobref%%:*}"
+          vers="${blobref#*:}"
+          wget "https://github.com/linux-surface/$repo/releases/download/$vers" || continue
+        done
+
+        # update repo
+        echo "==> Updating repo"
+        createrepo_c --xz --update --verbose .
+
+        # remove blob files without binary
+        for blob in $(find . -name '*.blob'); do
+          if [ ! -f "${blob%.blob}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # sign repo
+        echo "==> Signing repo"
+        echo "$GPG_KEY" | base64 -d | gpg --import --no-tty --batch --yes
+        if [ -f 'repodata/repomd.xml.asc' ]; then
+          rm repodata/repomd.xml.asc
+        fi
+        gpg --detach-sign --batch --no-tty --armor -u $GPG_KEY_ID repodata/repomd.xml
+
+        # commit changes
+        echo "==> Committing"
+        git checkout -b "tmp"
+        git add .   # Note: binary files are ignored in .gitignore
+        git commit -m "Update Fedora ${FEDORA} repository"
+
+        # push repo, rebase and retry if necessary
+        echo "==> Pushing"
+        num_tries=10
+        retry_sleep=30
+
+        tries=0
+        until [ $tries -ge ${num_tries} ]; do
+            echo "  - Starting attempt ${tries}/${num_tries}"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_REPO}"
+            git reset --hard "origin/${BRANCH_REPO}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_REPO}" "tmp"
+            git checkout "${BRANCH_REPO}"
+            git merge "tmp"
+
+            # try to push, break on success
+            git push && break
+
+            echo "  - Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${retry_sleep}
+        done
+
+        if [ $tries -ge ${num_tries} ]; then
+            echo "==> Failed to update repository"
+            exit 1
+        fi
+
+        # find and remove outdated blobs and signatures (no binary data)
+        echo "==> Looking for outdated blobs"
+        cd "${path_staging}/fedora/f${FEDORA}"
+
+        for blob in $(find . -name '*.blob'); do
+          file="${blob%.blob}"
+          if [ ! -f "${path_repo}/fedora/f${FEDORA}/${file}" ]; then
+            rm -f "${blob}"
+          fi
+        done
+
+        # check if there are changes, if not we're done
+        git diff-index --quiet HEAD -- && exit 0
+        echo "==> Changes detected, stage updates"
+
+        # commit updates and push
+        update_branch="${BRANCH_STAGING}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+        git checkout -b "${update_branch}"
+        git add .
+        git commit -m "Remove outdated Fedora ${FEDORA} blobs"
+        git push --set-upstream origin "${update_branch}"
+
+  update-current:
+    name: Update state
+    needs: [update-arch, update-arch-aarch64, update-debian, update-f37, update-f38, update-f39, update-f40]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update current branch
+      run: |
+        repo="https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # clone, merge, and push
+        git clone -b "${BRANCH_HOLD}" "${repo}" .
+        git checkout "${BRANCH_CURRENT}"
+        git merge "${BRANCH_HOLD}"
+        git push
+
+        git push origin ":${BRANCH_HOLD}"

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+# Warning: This will also remove reflog history... there's no going back after this
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive

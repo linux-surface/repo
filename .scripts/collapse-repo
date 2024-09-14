@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+N_COMMITS_KEEP=25
+
+# get base commit for repo branch
+git checkout repo
+git pull
+BASE=$(git rev-parse "HEAD~${N_COMMITS_KEEP}")
+echo "==> Using commit ${BASE} as base"
+
+# prepare new repo branch with base commit
+echo "==> Preparing new repo"
+git checkout --orphan "new/repo" "${BASE}"
+git commit -m "Collapse into one commit"
+git cherry-pick "${BASE}..repo"
+
+# replace old branch
+echo "==> Replace old branch"
+git branch -D "repo"
+git branch -m "new/repo" "repo"

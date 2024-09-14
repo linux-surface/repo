@@ -1,0 +1,59 @@
+name: Stage updates
+
+on:
+  push:
+    branches:
+      u/staging-*
+
+jobs:
+  merge:
+    name: Stage updates
+    runs-on: ubuntu-latest
+    steps:
+    - name: Stage updates
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH_STAGING: u/staging
+        NUM_TRIES: 10
+        RETRY_SLEEP: 30
+      run: |
+        repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+        branch="${GITHUB_REF#refs/heads/}"
+
+        # set git identity
+        git config --global user.email "surfacebot@users.noreply.github.com"
+        git config --global user.name "surfacebot"
+
+        # clone source branch
+        git clone -b "${branch}" "${repo}" .
+
+        tries=0
+        until [ $tries -ge $NUM_TRIES ]; do
+            echo "==> Starting attempt $tries/$NUM_TRIES"
+
+            # checkout, reset, and update target branch
+            git checkout "${BRANCH_STAGING}"
+            git reset --hard "origin/${BRANCH_STAGING}"
+            git pull
+
+            # rebase and merge
+            git rebase "${BRANCH_STAGING}" "${branch}"
+            git checkout "${BRANCH_STAGING}"
+            git merge "${branch}"
+
+            # try to push, break on success
+            git push && break
+
+            echo "==> Failed to push changes"
+
+            tries=$((tries+1))
+            sleep ${RETRY_SLEEP}
+        done
+
+        if [ $tries -ge $NUM_TRIES ]; then
+            echo "==> Failed to stage updates"
+            exit 1
+        fi
+
+        # delete branch
+        git push origin ":${branch}"

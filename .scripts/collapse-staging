@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+N_COMMITS_KEEP=25
+
+# update branches
+git checkout u/current && git pull
+git checkout u/staging && git pull
+
+# get base commit for u/current and u/staging
+git checkout u/current
+BASE=$(git rev-parse "HEAD~${N_COMMITS_KEEP}")
+echo "==> Using commit ${BASE} as base"
+
+# prepare new u/current branch with base commit
+echo "==> Preparing new u/current"
+git checkout --orphan "new/u/current" "${BASE}"
+git commit -m "Collapse into one commit"
+git cherry-pick "${BASE}..u/current"
+
+# prepare new u/staging branch
+echo "==> Preparing new u/staging"
+git switch -c "new/u/staging"
+git cherry-pick "u/current..u/staging"
+
+# replace old branches
+echo "==> Replace old branches"
+git branch -D "u/current"
+git branch -D "u/staging"
+git branch -m "new/u/staging" "u/staging"
+git branch -m "new/u/current" "u/current"
