@@ -21,7 +21,9 @@ git cherry-pick "${BASE}..u/current"
 # prepare new u/staging branch
 echo "==> Preparing new u/staging"
 git switch -c "new/u/staging"
-git cherry-pick "u/current..u/staging"
+if [ "$(git rev-parse "u/current")" != "$(git rev-parse "u/staging")" ]; then
+    git cherry-pick "u/current..u/staging"
+fi
 
 # replace old branches
 echo "==> Replace old branches"
