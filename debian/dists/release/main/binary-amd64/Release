@@ -1,0 +1,5 @@
+Component: main
+Origin: com.github.linux-surface.linux-surface
+Label: linux-surface
+Architecture: amd64
+Description: APT repository for linux-surface

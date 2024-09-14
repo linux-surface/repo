@@ -1,0 +1,7 @@
+Origin: com.github.linux-surface.linux-surface
+Label: linux-surface
+Codename: release
+Architectures: amd64
+Components: main
+Description: APT repository for linux-surface
+SignWith: 56C464BAAC421453

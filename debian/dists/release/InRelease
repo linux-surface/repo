@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: com.github.linux-surface.linux-surface
+Label: linux-surface
+Codename: release
+Date: Tue, 11 Jun 2024 00:42:46 UTC
+Architectures: amd64
+Components: main
+Description: APT repository for linux-surface
+MD5Sum:
+ c41338b3dbb4294d423cc0ab27533142 117423 main/binary-amd64/Packages
+ 336de698d53bd5fa9f21e03fb3a46d5e 24436 main/binary-amd64/Packages.gz
+ 15ab90745e7c52aee5b806236c34ac2a 150 main/binary-amd64/Release
+SHA1:
+ deff753fd270efb4001e19ce2ac358bdeb8771cb 117423 main/binary-amd64/Packages
+ bd7614bf742a8db923d9920fcde888043b6757eb 24436 main/binary-amd64/Packages.gz
+ dacb6eb20dd4d3620ac83380078a85fa95226d17 150 main/binary-amd64/Release
+SHA256:
+ d529f3c3b309576d90b79042b8a7435385186505f0ebe6708b4b43edc0fd1528 117423 main/binary-amd64/Packages
+ bfe438da921f924d24bf5b640ab94bed6810a8f97bbcb557544f41ec093059f2 24436 main/binary-amd64/Packages.gz
+ cebcefab064213b3eb64a98c1836a7fd496be058d1ea40de050bb9c2e5db5770 150 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEh976SrlKmaTIwxElVsRkuqxCFFMFAmZnnYYACgkQVsRkuqxC
+FFPbdQ/8CpFKU3V6GU4PrTVYBqBQx0fBp68VV1VpRm1SrtHbuBDY8ElNzHiMdMp5
+yJUf+6Qx+Jtp6m6av7tjugf92XZz03KIMrPiI2kX6FgGCPm+V2P3d9gLWaL/mjWn
+DK0syGqZtHRURCbcis36RhmRbJxlp0SJmH6/ovhn8AMd7udqpMW5LiBgDGrTY3Nl
+0yMrIA32lTyjWxq/pt0R3i2nTQW96wW5t+ymlZM2bVr+mYItCqYUlQ5Pt7vqO/ZF
+0bnO4Uq57IiCKXDZE1RAyp3wmsh5EVipuSjg5TEbQ6MvRDl7tZMy+UiUzyjchb8R
+8p2MuAtUOVTC8Pse8TYrwft1ohkFFdWYL5KEs3wpJ2ACy8nD8Oy5OJQG4TdMsOUX
+G92+qHSIz5rJ+QwTCjfyuh7JnJoOS8uXJl4DKphkfg7ifvP+PSkY1xxUgeh9uoAB
+99GpeA/PQh6oBbvaYiUP8kM8jm7bQ3XfFiWDNM7+yiPh9YduoMj88RJ0kYAi5FpP
+dWvC15fcktGA60R52ggWymxi/JUiludg+6PyD/2TTSSjfcYObwyP3C0UsAtkKoq8
+il95gLkI3yQ4OshG1MM7AUeK2SxMPFWmlzP7INCcKMBpnSgKIXgA1QbK+gmWG+Ez
+t5TC5bLxx8w+/JuQ+41rkNlPPHlqmUWM7/U6wZItyMnshCBI3PI=
+=i4O2
+-----END PGP SIGNATURE-----
