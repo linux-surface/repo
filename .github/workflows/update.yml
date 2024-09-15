@@ -8,7 +8,9 @@ on:
   workflow_dispatch:
 
 env:
-  TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # Note: We need the bot token here because GITHUB_TOKEN cannot trigger the
+  # "stage" actions.
+  TOKEN: ${{ secrets.LINUX_SURFACE_BOT_TOKEN }}
   BRANCH_HOLD: u/hold
   BRANCH_CURRENT: u/current
   BRANCH_STAGING: u/staging
