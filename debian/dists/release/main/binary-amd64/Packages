@@ -14,127 +14,127 @@ MD5sum: d4e070799a841f9a83c2568a9e8602aa
 Description: Userspace daemon for Intel Precise Touch & Stylus
 
 Package: libwacom-bin-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom-bin-surface/libwacom-bin-surface_2.13.0-1_amd64.deb
-Size: 15600
-SHA256: 792eb3bd81fd4e4cce3a595d13283c5013783acb21108f5e8397d180710f9e87
-SHA1: 1cef2635499b76cd60bd869eb3c40775ca6687e8
-MD5sum: d143fd46bbb2aef445a75edc5f30bcb5
+Filename: pool/main/libw/libwacom-bin-surface/libwacom-bin-surface_2.13.0-2_amd64.deb
+Size: 15748
+SHA256: 83490dd7fad2223edca10c0b0d09552cc9f3c3921964062c3e783b72f11c1965
+SHA1: 71c98e47c74a2fd6b6315eba977170541eb5345a
+MD5sum: 36d86b130dce6c9db5a30a2eeab71c5c
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom9-surface (= 2.13.0-1)
+Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom9-surface (= 2.13.0-2)
 Conflicts: libwacom-bin
-Provides: libwacom-bin (= 2.13.0-1)
+Provides: libwacom-bin (= 2.13.0-2)
 
 Package: libwacom-common-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom-common-surface/libwacom-common-surface_2.13.0-1_amd64.deb
-Size: 158862
-SHA256: a2a64681107e5bbd5d92d6e42fb66afee3af8df158cab39f5f0540d2c5704003
-SHA1: 64ea2eea2864f845939f262d350ed4df56d6d133
-MD5sum: 39ac9722ffefa5bc6b863f90d0b5213a
+Filename: pool/main/libw/libwacom-common-surface/libwacom-common-surface_2.13.0-2_amd64.deb
+Size: 156210
+SHA256: 2d2c94778abcd55c8910abcfad6f66cdc5497f2fb035a44f91345ba286438499
+SHA1: b230893a03dc4202f80893fa936a506298184c3c
+MD5sum: 4c9876820d427c9079475988b7bfdc6c
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
 Conflicts: libwacom-common
-Provides: libwacom-common (= 2.13.0-1)
+Provides: libwacom-common (= 2.13.0-2)
 
 Package: libwacom-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom-surface/libwacom-surface_2.13.0-1_amd64.deb
-Size: 1870
-SHA256: 228a1406a5f1ebaa839dc01d30402c9c96c9ad8ed9ec7dcfe2cadc11abd00d0a
-SHA1: 1bc88fa30ff334f1f72c182a90547b23f78e2b82
-MD5sum: d573127f7774c210a47c5561030904a6
+Filename: pool/main/libw/libwacom-surface/libwacom-surface_2.13.0-2_amd64.deb
+Size: 1868
+SHA256: de99157ef48ebe4ffa956b5cea292cc5e90e22a69cc3b92a2d49d90c8d8d42f2
+SHA1: 7bbc1a3a83e1fcbd6941abd68e416e04bbb3dbcb
+MD5sum: 33e7c52d4e2deb1c0a3720fdb157a79a
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
-Depends: libwacom2-surface (= 2.13.0-1), libwacom9-surface (= 2.13.0-1), libwacom-bin-surface (= 2.13.0-1), libwacom-common-surface (= 2.13.0-1)
+Depends: libwacom2-surface (= 2.13.0-2), libwacom9-surface (= 2.13.0-2), libwacom-bin-surface (= 2.13.0-2), libwacom-common-surface (= 2.13.0-2)
 
 Package: libwacom2-dev-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom2-dev-surface/libwacom2-dev-surface_2.13.0-1_amd64.deb
-Size: 8512
-SHA256: 31380b823e2e065679a035df0b17659b160550d1a9d277e612a2059aa197ae0f
-SHA1: 6c9449c49273c0c580a07ae8308675fc169e73fa
-MD5sum: cfcb8cbb8311b8ee0e9ac2a3e72f1f29
+Filename: pool/main/libw/libwacom2-dev-surface/libwacom2-dev-surface_2.13.0-2_amd64.deb
+Size: 8510
+SHA256: 7bd708ed034e27dea149095f6aaea59a2e9192c493aad6a72eeeed911b6f2005
+SHA1: ce21b7b9fdf503e54bb915ddc4e8ef3b89f81d81
+MD5sum: c81418d7657a3e7d7de17d8915961629
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom2-surface (= 2.13.0-1)
+Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom2-surface (= 2.13.0-2)
 Conflicts: libwacom-dev, libwacom9-dev-surface
-Provides: libwacom-dev (= 1.12.1-1)
+Provides: libwacom-dev (= 1.12.1-2)
 
 Package: libwacom2-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom2-surface/libwacom2-surface_2.13.0-1_amd64.deb
-Size: 22918
-SHA256: 9115c687585e502a4b792a8d4714ba2704af50f8cbb20c3255d359745391c95e
-SHA1: 91ff038bd9c487cc513f67f2bc0e97cb6cb32916
-MD5sum: e0ce7d1c0df37ffb9f83656a15b84dd9
+Filename: pool/main/libw/libwacom2-surface/libwacom2-surface_2.13.0-2_amd64.deb
+Size: 22920
+SHA256: a17d9504898be45006d2c6cf8bc5b0c7e1424fc3b552cb61877df4874890e10b
+SHA1: d4eefe93425354995504b2343fa5ec7c16e040a1
+MD5sum: 407a7c325cfb5d054eb4f067f64718ed
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom-common-surface (= 2.13.0-1)
+Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom-common-surface (= 2.13.0-2)
 Conflicts: libwacom2
-Provides: libwacom2 (= 1.12.1-1)
+Provides: libwacom2 (= 1.12.1-2)
 
 Package: libwacom9-dev-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom9-dev-surface/libwacom9-dev-surface_2.13.0-1_amd64.deb
-Size: 9858
-SHA256: 8c274f0f0f1feb4a4e92825f7ed1e20296a26843da10dfd65b2ce5c059fd73fa
-SHA1: 2675dd2d30c772b49d00e887cf5ddafebff3d8f3
-MD5sum: 7a207a286728abcbabe1445acf239b76
+Filename: pool/main/libw/libwacom9-dev-surface/libwacom9-dev-surface_2.13.0-2_amd64.deb
+Size: 9856
+SHA256: 4cd549ccba99946307a007aca7ca78f24fbc0f69e8cf2a06dd83dc9a17c17650
+SHA1: 5cf390609bad01230255ceca77410718589517c3
+MD5sum: e5d711383862c403b5797c076f59e6ff
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom9-surface (= 2.13.0-1)
+Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom9-surface (= 2.13.0-2)
 Conflicts: libwacom-dev, libwacom2-dev-surface
-Provides: libwacom-dev (= 2.13.0-1)
+Provides: libwacom-dev (= 2.13.0-2)
 
 Package: libwacom9-surface
-Version: 2.13.0-1
+Version: 2.13.0-2
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom9-surface/libwacom9-surface_2.13.0-1_amd64.deb
-Size: 24988
-SHA256: 58dd0775ba46eb646aca4500cb6805837d4e7b6f4e96fa7e7772200eed6b8f5b
-SHA1: b03f6396b7c79ce954a12119a85e17f2225acf68
-MD5sum: f2209c38711e605be35a23e7e5047b0d
+Filename: pool/main/libw/libwacom9-surface/libwacom9-surface_2.13.0-2_amd64.deb
+Size: 25018
+SHA256: 5221bca7e366bc38069df8a631ae58dbfc107be9a0117918fe833e6c8ffb9c18
+SHA1: 1f5c12eb3a96a8f1b18ab78a53ad39906d626d13
+MD5sum: c8ac7fd4858587c7a56426d886bd9899
 Description: Patched libwacom for Microsoft Surface devices
 Architecture: amd64
 License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom-common-surface (= 2.13.0-1)
+Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom-common-surface (= 2.13.0-2)
 Conflicts: libwacom9
-Provides: libwacom9 (= 2.13.0-1)
+Provides: libwacom9 (= 2.13.0-2)
 
 Package: linux-headers-4.19.206-surface-lts
 Source: linux-4.19.206-surface-lts
