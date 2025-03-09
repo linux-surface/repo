@@ -343,7 +343,8 @@ jobs:
   update-debian:
     name: Update Debian repository
     needs: [hold-staging]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
+    container: ubuntu:22.04
     steps:
     - name: Update repository
       run: |
