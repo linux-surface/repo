@@ -1,16 +1,16 @@
 Package: iptsd
-Version: 3.0.1-1
+Version: 3.1.0-1
 Architecture: amd64
 Maintainer: Dorian Stoll <dorian.stoll@tmsp.io>
-Installed-Size: 5704
-Depends: systemd, udev, libc6 (>= 2.29), libcairomm-1.0-1v5 (>= 1.12.0), libgcc-s1 (>= 3.0), libstdc++6 (>= 9)
+Installed-Size: 6509
+Depends: systemd, udev, libc6 (>= 2.35), libcairomm-1.0-1v5 (>= 1.14.4), libgcc-s1 (>= 3.0), libstdc++6 (>= 12)
 Priority: optional
 Section: misc
-Filename: pool/main/i/iptsd/iptsd_3.0.1-1_amd64.deb
-Size: 955974
-SHA256: cf50d7b71c0cd181e63372dc78758b1c7bfb5d3400dfd46ab3428d9fc7ce332b
-SHA1: 0266b724db3b854807b7964b8833436fcca2718d
-MD5sum: ec61962755e6ce14a4970744b68c9a19
+Filename: pool/main/i/iptsd/iptsd_3.1.0-1_amd64.deb
+Size: 1018118
+SHA256: 1fb71a3292e01f9c23aaa815573413ec3972c5eca5a9d9d190d5044fe0bd31f5
+SHA1: a250add1c12440b6aad7b735da7dcaf691848846
+MD5sum: fdc0ac138e37149e0cad06d168005a31
 Description: Userspace daemon for Intel Precise Touch & Stylus
 
 Package: libwacom-bin-surface
@@ -3632,47 +3632,47 @@ Description:
   Meta-package for linux-surface kernel images.
 
 Package: linux-surface-secureboot-mok
-Version: 20250420-1
+Version: 20251230-1
 Architecture: amd64
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
 Installed-Size: 18
 Depends: mokutil, grep
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface-secureboot-mok/linux-surface-secureboot-mok_20250420-1_amd64.deb
-Size: 5474
-SHA256: a3a36d339ff2803db800af6533b6436be634e8e439d8665a27cab1962823ce29
-SHA1: 611c074b0ed6b476d5b47ed0c171357d42f8fa29
-MD5sum: f95d1ffea13e1e1a4655315a2023c893
+Filename: pool/main/l/linux-surface-secureboot-mok/linux-surface-secureboot-mok_20251230-1_amd64.deb
+Size: 5508
+SHA256: faf4d02e51fa2514a0212b9746bdc2b12e831a3068727e79b57c9472581f3231
+SHA1: b7cd4a582677e3dd41b157c672fc250f47ea7792
+MD5sum: 147718cb611ad316894594ab818cbc81
 Description: Secure-boot machine owner key for linux-surface kernels
 
 Package: surface-control
-Version: 0.4.9-1
+Version: 0.4.10-1
 Architecture: amd64
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Installed-Size: 931
+Installed-Size: 915
 Depends: libc6 (>= 2.19), libgcc1 (>= 1:4.9.2), libudev1
 Priority: optional
 Section: misc
-Filename: pool/main/s/surface-control/surface-control_0.4.9-1_amd64.deb
-Size: 345676
-SHA256: e0d82889c3b77e662d84c474352f108eb8b02e3eb3355caf7c1e2dcf3591fae3
-SHA1: 7ec4b73aecd0d6d9f63e4d4b282fe29db6602743
-MD5sum: a8a079d880aa3177657b8e636bf04afc
+Filename: pool/main/s/surface-control/surface-control_0.4.10-1_amd64.deb
+Size: 342472
+SHA256: 86f5b93b7ced653e37168aa078cdfbd001be0be15eb9794e3ed636a80254a63b
+SHA1: f406352f905e829364e973dc9da0b80bbf96a679
+MD5sum: d195cc0429576e29f3066947ad1173a1
 Description: Control various aspects of Microsoft Surface devices on Linux from the Command-Line
 
 Package: surface-dtx-daemon
-Version: 0.3.10-1
+Version: 0.3.11-1
 Architecture: amd64
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Installed-Size: 5278
+Installed-Size: 5164
 Depends: libc6 (>= 2.19), libgcc1 (>= 1:4.9.2), libdbus-1-3
 Priority: optional
 Section: misc
-Filename: pool/main/s/surface-dtx-daemon/surface-dtx-daemon_0.3.10-1_amd64.deb
-Size: 1289600
-SHA256: 58b791ef96d6e2c912e70e6e93dd70a5244468d4a434fd9326338668acda2542
-SHA1: 272645719b15b8777df21addd34166c60b1b5793
-MD5sum: b592d25da0d3599c18a9bfcbbe9dc342
+Filename: pool/main/s/surface-dtx-daemon/surface-dtx-daemon_0.3.11-1_amd64.deb
+Size: 1268880
+SHA256: 0851bd84fd8d6327ddc283193ed4ed2ea4c6d9b6d5eb2668eeac3ab2c79d03f5
+SHA1: aa45464d28afe4e8b475b42c21ef443e10a5ceff
+MD5sum: 21e2456965a1b4e77454df37427e2729
 Description: Surface Detachment System (DTX) Daemon
 
