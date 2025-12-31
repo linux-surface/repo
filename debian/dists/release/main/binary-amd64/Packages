@@ -1314,6 +1314,25 @@ Description: Linux kernel headers for 6.17.13-surface-1 on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-6.17.13-surface-2
+Source: linux-upstream
+Version: 6.17.13-surface-2
+Architecture: amd64
+Maintainer: root <root@da8989c99ed8>
+Installed-Size: 61319
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-headers-6.17.13-surface-2_6.17.13-surface-2_amd64.deb
+Size: 11188122
+SHA256: 77d149718dc14b638511a636c934941f1187b63157416044bdb95bd6b022ea27
+SHA1: eb2a0652f9bd02c556fa09927817439983e1613a
+MD5sum: 8bbaece7f99dbc22512b3b1ff07a4ed5
+Description: Linux kernel headers for 6.17.13-surface-2 on amd64
+ This package provides kernel header files for 6.17.13-surface-2 on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -1943,19 +1962,19 @@ Description: Linux kernel headers for 6.9.9-surface-1 on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 6.17.13-surface-1
+Version: 6.17.13-surface-2
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-6.17.13-surface-1 (= 6.17.13-surface-1)
+Depends: linux-headers-6.17.13-surface-2 (= 6.17.13-surface-2)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-headers-surface_6.17.13-surface-1_amd64.deb
-Size: 2462
-SHA256: fb41d8d077f394778412bec8db0ad86b6e7e9b5e1b40336082075ee8d6b84480
-SHA1: 8dc35c1b481a99ebf051da1254c8558f0ab91f66
-MD5sum: 481e01fb52fdf8d9dd5aa97e72b0284a
+Filename: pool/main/l/linux-surface/linux-headers-surface_6.17.13-surface-2_amd64.deb
+Size: 2466
+SHA256: 02d1c4fd51e07b0cc190d0d4008f9bbc9b107e507e340a5fa67da3ff69a03979
+SHA1: 2fca1f0d8e6ed43072aaccd7c61ecaa499fbcbda
+MD5sum: 42b6b2823f5700f2bf32189e9d8ca4cc
 Description:
   Meta-package for linux-surface headers.
 
@@ -3057,6 +3076,24 @@ Description: Linux kernel, version 6.17.13-surface-1
  This package contains the Linux kernel, modules and corresponding other
  files, version: 6.17.13-surface-1.
 
+Package: linux-image-6.17.13-surface-2
+Source: linux-upstream
+Version: 6.17.13-surface-2
+Architecture: amd64
+Maintainer: root <root@da8989c99ed8>
+Installed-Size: 492935
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-image-6.17.13-surface-2_6.17.13-surface-2_amd64.deb
+Size: 92574246
+SHA256: 242f6f463abfac108264126a2e5136d60edfb235bf7ce6b78dc87ed723c794bb
+SHA1: ba6caa203b01eed55f429901d11c28cd24e0a008
+MD5sum: ff9be51ffaa10347df3986219bdf5296
+Description: Linux kernel, version 6.17.13-surface-2
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.17.13-surface-2.
+
 Package: linux-image-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -3671,20 +3708,20 @@ Description: Linux kernel, version 6.9.9-surface-1
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 6.17.13-surface-1
+Version: 6.17.13-surface-2
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-6.17.13-surface-1 (= 6.17.13-surface-1)
+Depends: linux-image-6.17.13-surface-2 (= 6.17.13-surface-2)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-image-surface_6.17.13-surface-1_amd64.deb
-Size: 2478
-SHA256: 8c67d0e1089c5193738a69d143d3df03229c16ba9c4d3e1a95798e54a25b2c69
-SHA1: b42534ffe89d53a2dc555eac73a520a789d54906
-MD5sum: 4c28822be03eeb2cf9442b4e99a0a3c8
+Filename: pool/main/l/linux-surface/linux-image-surface_6.17.13-surface-2_amd64.deb
+Size: 2474
+SHA256: 3b913988272b2d4138b1c7662e971476eed2cf992583995989ff7ae84a20aa92
+SHA1: 2f323ad8512f462b36279041b8dc11f1b1d7fc50
+MD5sum: 1ad96cf55fa9ee3153de047c09ca4f51
 Description:
   Meta-package for linux-surface kernel images.
 
