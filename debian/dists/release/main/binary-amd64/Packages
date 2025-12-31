@@ -14,127 +14,165 @@ MD5sum: fdc0ac138e37149e0cad06d168005a31
 Description: Userspace daemon for Intel Precise Touch & Stylus
 
 Package: libwacom-bin-surface
-Version: 2.16.1-1
+Source: libwacom-surface
+Version: 2.17.0-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 70
+Depends: libc6 (>= 2.34), libglib2.0-0 (>= 2.28.0), libgudev-1.0-0 (>= 146), libwacom9-surface (= 2.17.0-1), systemd
+Conflicts: libwacom-bin
+Provides: libwacom-bin (= 2.17.0-1)
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom-bin-surface/libwacom-bin-surface_2.16.1-1_amd64.deb
-Size: 17598
-SHA256: 71bfeb8192cabd89536b5a1bbe232070f40233ef02aaab0c01b3ca92241a1dd4
-SHA1: 6db33d31e420667d02b0c2aa4f996ab00d806d94
-MD5sum: 12bb3eb6b9a62a791248e22397e995f9
-Description: Patched libwacom for Microsoft Surface devices
-Architecture: amd64
-License: MIT
-Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom9-surface (= 2.16.1-1)
-Conflicts: libwacom-bin
-Provides: libwacom-bin (= 2.16.1-1)
+Filename: pool/main/libw/libwacom-surface/libwacom-bin-surface_2.17.0-1_amd64.deb
+Size: 16408
+SHA256: 06f53b5e9b7e3c1750121e45304965a919fd514c6cc0b113c11151eb350f1313
+SHA1: 80c75f88248a1e11e98d7dfcf0290b2ab734973d
+MD5sum: 9b3abee489c3f70156d823ffefd162ba
+Description: Wacom model feature query library (utilities)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains utilities for libwacom.
 
 Package: libwacom-common-surface
-Version: 2.16.1-1
+Source: libwacom-surface
+Version: 2.17.0-1
+Architecture: all
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 1901
+Conflicts: libwacom-common
+Provides: libwacom-common (= 2.17.0-1)
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom-common-surface/libwacom-common-surface_2.16.1-1_amd64.deb
-Size: 182812
-SHA256: 96712d19157068df666fed2ad384bbe8794805c852ffb91b608a1562fd3c021b
-SHA1: 39886c08660fcd82120ee86e3f0b4e3eec1ef3bd
-MD5sum: dff6a997a1ed884616cc255c562c4d26
-Description: Patched libwacom for Microsoft Surface devices
-Architecture: amd64
-License: MIT
-Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Conflicts: libwacom-common
-Provides: libwacom-common (= 2.16.1-1)
+Filename: pool/main/libw/libwacom-surface/libwacom-common-surface_2.17.0-1_all.deb
+Size: 114506
+SHA256: c676e60e41a12055342f54a8ab156c3ce96d92e4abfd09df58407aa0d2b3c3a4
+SHA1: 99c5c9bc26eb6954c6bfcc10131e4cf95eb4c751
+MD5sum: ccb3783d9a4c73606475498247be1fcd
+Description: Wacom model feature query library (common data files)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains common data files for libwacom, patched to support
+ Microsoft Surface devices.
 
 Package: libwacom-surface
-Version: 2.16.1-1
+Version: 2.17.0-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 7
+Depends: libwacom2-surface (= 2.17.0-1), libwacom9-surface (= 2.17.0-1), libwacom-bin-surface (= 2.17.0-1), libwacom-common-surface (= 2.17.0-1)
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom-surface/libwacom-surface_2.16.1-1_amd64.deb
-Size: 1870
-SHA256: 4e267d0b3b078ea3a31851d7c56e7ce5a114898511897c086abebdf8fffbb7b9
-SHA1: 79ff7d67acc8fdc5b7978417d64de3a746cf10bb
-MD5sum: 2669ae66155ad4538a2cd6534d55403b
-Description: Patched libwacom for Microsoft Surface devices
-Architecture: amd64
-License: MIT
-Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Depends: libwacom2-surface (= 2.16.1-1), libwacom9-surface (= 2.16.1-1), libwacom-bin-surface (= 2.16.1-1), libwacom-common-surface (= 2.16.1-1)
+Filename: pool/main/libw/libwacom-surface/libwacom-surface_2.17.0-1_amd64.deb
+Size: 1770
+SHA256: d683dc6a2148ff15acbe8eb288fab712b2c3c471fd146e37e82e50068ced7ba7
+SHA1: f35f08cf03124c6314ddf7c734414147e35eeeab
+MD5sum: 2c44dc77407c04df84cc7eedb94c7c81
+Description: Wacom model feature query library (metapackage for Surface devices)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This metapackage depends on all libwacom packages patched for Microsoft
+ Surface devices.
 
 Package: libwacom2-dev-surface
-Version: 2.16.1-1
-Priority: optional
-Section: misc
-Filename: pool/main/libw/libwacom2-dev-surface/libwacom2-dev-surface_2.16.1-1_amd64.deb
-Size: 8554
-SHA256: 394f3e8335b6999409ed5ba73407a799fd90db5ae0c326478b27d622085a2bb3
-SHA1: 0fc7c37a3ad208c6d6024b438e4f1dd5080a3c44
-MD5sum: de91a74153405d96a76752d8582b8558
-Description: Patched libwacom for Microsoft Surface devices
+Source: libwacom-surface
+Version: 2.17.0-1
 Architecture: amd64
-License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom2-surface (= 2.16.1-1)
+Installed-Size: 41
+Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom2-surface (= 2.17.0-1)
 Conflicts: libwacom-dev, libwacom9-dev-surface
 Provides: libwacom-dev (= 1.12.1-1)
+Priority: optional
+Section: misc
+Filename: pool/main/libw/libwacom-surface/libwacom2-dev-surface_2.17.0-1_amd64.deb
+Size: 8186
+SHA256: dab376e8e738f3b860121aacbde8cb14ab1101a47c91f4b80ba7a069ebfc6632
+SHA1: 3667fc4dc164ffbb5411610bae3725371cde9c48
+MD5sum: 7f06e7e85547b832c72697cf3d1ae5c5
+Description: Wacom model feature query library (development files)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains the development files for libwacom 1.x series.
 
 Package: libwacom2-surface
-Version: 2.16.1-1
-Priority: optional
-Section: misc
-Filename: pool/main/libw/libwacom2-surface/libwacom2-surface_2.16.1-1_amd64.deb
-Size: 22814
-SHA256: e02f3b530dc24a55ff467b13a13549267ad0f8e4a27f89364ddec1e686c936d1
-SHA1: 7103568f7d087d85209a49d50af2827fb7e3481c
-MD5sum: 557564114ebfdab0a679ac2ffb33214a
-Description: Patched libwacom for Microsoft Surface devices
+Source: libwacom-surface
+Version: 2.17.0-1
 Architecture: amd64
-License: MIT
 Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom-common-surface (= 2.16.1-1)
+Installed-Size: 78
+Depends: libc6 (>= 2.7), libglib2.0-0 (>= 2.67.3), libgudev-1.0-0 (>= 146), systemd, libwacom-common-surface (= 2.17.0-1)
 Conflicts: libwacom2
 Provides: libwacom2 (= 1.12.1-1)
+Priority: optional
+Section: misc
+Filename: pool/main/libw/libwacom-surface/libwacom2-surface_2.17.0-1_amd64.deb
+Size: 21894
+SHA256: 312f54e50451eb128a5a4667d2ac475a4e28e0d6587b829599f2170a25c5f080
+SHA1: d9aed2b20aef3695da37c1d42817cf381cde600f
+MD5sum: fd99ffb5c1a4c3ac36976a7698df202f
+Description: Wacom model feature query library (patched for Surface devices)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains the library for libwacom 1.x series, patched to
+ support Microsoft Surface devices.
 
 Package: libwacom9-dev-surface
-Version: 2.16.1-1
+Source: libwacom-surface
+Version: 2.17.0-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 50
+Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom9-surface (= 2.17.0-1)
+Conflicts: libwacom-dev, libwacom2-dev-surface
+Provides: libwacom-dev (= 2.17.0-1)
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom9-dev-surface/libwacom9-dev-surface_2.16.1-1_amd64.deb
-Size: 10296
-SHA256: 3ec04709131db6130aa31c447018f4aad9df91dd464a6675b9dc203a148d8dde
-SHA1: 442ab076eb866c9c2103e4c7b5f8dcac9ece2032
-MD5sum: 67e01e2db94a39044158b34a73b5cecd
-Description: Patched libwacom for Microsoft Surface devices
-Architecture: amd64
-License: MIT
-Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-dev, libgudev-1.0-dev, libwacom9-surface (= 2.16.1-1)
-Conflicts: libwacom-dev, libwacom2-dev-surface
-Provides: libwacom-dev (= 2.16.1-1)
+Filename: pool/main/libw/libwacom-surface/libwacom9-dev-surface_2.17.0-1_amd64.deb
+Size: 9800
+SHA256: 9370c32eb2ae3ca5f50e649c4ed80ef5a0c83a0652bf8c1bbf805b2bdb02cc89
+SHA1: d8d7e54ee5f5abc0062659dfa5cdc38fab22e5f0
+MD5sum: a5c582785f648fb60d8718599d8e5b8b
+Description: Wacom model feature query library (development files)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains the development files for libwacom 2.x series.
 
 Package: libwacom9-surface
-Version: 2.16.1-1
+Source: libwacom-surface
+Version: 2.17.0-1
+Architecture: amd64
+Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
+Installed-Size: 94
+Depends: libc6 (>= 2.14), libevdev2 (>= 1.6.901), libglib2.0-0 (>= 2.67.3), libgudev-1.0-0 (>= 146), systemd, libwacom-common-surface (= 2.17.0-1)
+Conflicts: libwacom9
+Provides: libwacom9 (= 2.17.0-1)
 Priority: optional
 Section: misc
-Filename: pool/main/libw/libwacom9-surface/libwacom9-surface_2.16.1-1_amd64.deb
-Size: 31168
-SHA256: 7f33b78ea5eb8b06cd7953b8a819e80b8e3fd7e959300939e812b1d01a0a6a11
-SHA1: 126d937ee954cde2d5215b70e676b3248c723d1b
-MD5sum: a8c4fc26b30a71964f248a8ba988dd1b
-Description: Patched libwacom for Microsoft Surface devices
-Architecture: amd64
-License: MIT
-Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Homepage: https://github.com/linux-surface/libwacom
-Depends: libglib2.0-0, libgudev-1.0-0, systemd, libwacom-common-surface (= 2.16.1-1)
-Conflicts: libwacom9
-Provides: libwacom9 (= 2.16.1-1)
+Filename: pool/main/libw/libwacom-surface/libwacom9-surface_2.17.0-1_amd64.deb
+Size: 27130
+SHA256: f7a9303eafdca4a7a7a38a24f5dd31112cf055da20e2bbe950d03f9ab6658e37
+SHA1: 89bd0ddb6df9621cdde2421fa15183bfe1a3045a
+MD5sum: f88caeeec3f5b3d6aedc1061b8b2d4c7
+Description: Wacom model feature query library (patched for Surface devices)
+ libwacom is a library to identify wacom tablets and their model-specific
+ features. It provides easy access to information such as "is this a
+ built-in on-screen tablet", "what is the size of this model", etc.
+ .
+ This package contains the library for libwacom 2.x series, patched to
+ support Microsoft Surface devices.
 
 Package: linux-headers-4.19.206-surface-lts
 Source: linux-4.19.206-surface-lts
@@ -1257,6 +1295,25 @@ Description: Linux kernel headers for 6.17.1-surface-2 on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-6.17.13-surface-1
+Source: linux-upstream
+Version: 6.17.13-surface-1
+Architecture: amd64
+Maintainer: root <root@204aa41eb8dc>
+Installed-Size: 61319
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-headers-6.17.13-surface-1_6.17.13-surface-1_amd64.deb
+Size: 11188686
+SHA256: f395dbc8bd013933e1e0ccc6dac7e056bba121dcbf252a864c7cbbbc356b4b28
+SHA1: 1806a468db680a4e9a10fd3319f1ffdccf2b1a71
+MD5sum: 55bb37b79093455e2662c587160d282c
+Description: Linux kernel headers for 6.17.13-surface-1 on amd64
+ This package provides kernel header files for 6.17.13-surface-1 on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -1886,19 +1943,19 @@ Description: Linux kernel headers for 6.9.9-surface-1 on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 6.17.1-surface-2
+Version: 6.17.13-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-6.17.1-surface-2 (= 6.17.1-surface-2)
+Depends: linux-headers-6.17.13-surface-1 (= 6.17.13-surface-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-headers-surface_6.17.1-surface-2_amd64.deb
-Size: 2458
-SHA256: e8493bcce2060c5c2930a9eb636229d069722e39347259eb4fe6a9c058609386
-SHA1: 2f8e7e87af221cc209f4ec29ca2ba9b7a67f8580
-MD5sum: 9f149802b8a2a9313b76746da8092614
+Filename: pool/main/l/linux-surface/linux-headers-surface_6.17.13-surface-1_amd64.deb
+Size: 2462
+SHA256: fb41d8d077f394778412bec8db0ad86b6e7e9b5e1b40336082075ee8d6b84480
+SHA1: 8dc35c1b481a99ebf051da1254c8558f0ab91f66
+MD5sum: 481e01fb52fdf8d9dd5aa97e72b0284a
 Description:
   Meta-package for linux-surface headers.
 
@@ -2982,6 +3039,24 @@ Description: Linux kernel, version 6.17.1-surface-2
  This package contains the Linux kernel, modules and corresponding other
  files, version: 6.17.1-surface-2.
 
+Package: linux-image-6.17.13-surface-1
+Source: linux-upstream
+Version: 6.17.13-surface-1
+Architecture: amd64
+Maintainer: root <root@204aa41eb8dc>
+Installed-Size: 492914
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-image-6.17.13-surface-1_6.17.13-surface-1_amd64.deb
+Size: 92571238
+SHA256: d0255174738b32df5cf14469ae63cafe72a1d19d26d39cb14ff6b08b03f122df
+SHA1: a03af9883493b8dc1373c90909550588b2d65101
+MD5sum: 17f399a87ed43fda2d7b5099d18c2f5a
+Description: Linux kernel, version 6.17.13-surface-1
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.17.13-surface-1.
+
 Package: linux-image-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -3596,20 +3671,20 @@ Description: Linux kernel, version 6.9.9-surface-1
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 6.17.1-surface-2
+Version: 6.17.13-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-6.17.1-surface-2 (= 6.17.1-surface-2)
+Depends: linux-image-6.17.13-surface-1 (= 6.17.13-surface-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-image-surface_6.17.1-surface-2_amd64.deb
-Size: 2470
-SHA256: e9ebc0d5896adbbd336f1b37b138ad112037a310e829bc3c8c9c9545091a4a59
-SHA1: 79a2becb87cafda599c7caee1240447a36f9bd2f
-MD5sum: 54c6dc90e570e352ae334b3467673205
+Filename: pool/main/l/linux-surface/linux-image-surface_6.17.13-surface-1_amd64.deb
+Size: 2478
+SHA256: 8c67d0e1089c5193738a69d143d3df03229c16ba9c4d3e1a95798e54a25b2c69
+SHA1: b42534ffe89d53a2dc555eac73a520a789d54906
+MD5sum: 4c28822be03eeb2cf9442b4e99a0a3c8
 Description:
   Meta-package for linux-surface kernel images.
 
