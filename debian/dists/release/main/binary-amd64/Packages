@@ -1390,6 +1390,25 @@ Description: Linux kernel headers for 6.18.3-surface-2 on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-6.18.4-surface-1
+Source: linux-upstream
+Version: 6.18.4-surface-1
+Architecture: amd64
+Maintainer: root <root@c46c33706619>
+Installed-Size: 61877
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-headers-6.18.4-surface-1_6.18.4-surface-1_amd64.deb
+Size: 11280038
+SHA256: 62e71a21e3da4cd528cf490ed54959771e7c7c93ef30688f56c0b54d9d5d4fc7
+SHA1: b53404439c74649f36817a1b4453a7da7a21746c
+MD5sum: 8a473749d60bce2b31833cd88f7c6fe0
+Description: Linux kernel headers for 6.18.4-surface-1 on amd64
+ This package provides kernel header files for 6.18.4-surface-1 on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -2019,19 +2038,19 @@ Description: Linux kernel headers for 6.9.9-surface-1 on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 6.18.3-surface-2
+Version: 6.18.4-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-6.18.3-surface-2 (= 6.18.3-surface-2)
+Depends: linux-headers-6.18.4-surface-1 (= 6.18.4-surface-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-headers-surface_6.18.3-surface-2_amd64.deb
+Filename: pool/main/l/linux-surface/linux-headers-surface_6.18.4-surface-1_amd64.deb
 Size: 2454
-SHA256: 49668e53112d881cb3a7cc3add498cc9b2203a12937b4596cbb7719b24be4069
-SHA1: e34c01cc8a4d6807e22c5530247efc7a966715e1
-MD5sum: 0e17451fc3a82b32b29d76a1840b1c24
+SHA256: 8e9a44d539a6fb02421bff258bf1ed9d670c61b02d6f6cafd9ebe2d2d7b8fbef
+SHA1: 689d480aa804ae3a25755510297cc4ad50a990b4
+MD5sum: 428793574daf8e823d42f008a681894b
 Description:
   Meta-package for linux-surface headers.
 
@@ -3205,6 +3224,24 @@ Description: Linux kernel, version 6.18.3-surface-2
  This package contains the Linux kernel, modules and corresponding other
  files, version: 6.18.3-surface-2.
 
+Package: linux-image-6.18.4-surface-1
+Source: linux-upstream
+Version: 6.18.4-surface-1
+Architecture: amd64
+Maintainer: root <root@c46c33706619>
+Installed-Size: 492824
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-image-6.18.4-surface-1_6.18.4-surface-1_amd64.deb
+Size: 92556206
+SHA256: 1584bbcae88c283ccc9a8aa4611bc937b228192a00594eb9db6aeaa5d518fd10
+SHA1: 1e3e2d3d07abbca6d6c376fa9ed8b44ba471e309
+MD5sum: f6642024a5e034d1c702b14fe94c6c9a
+Description: Linux kernel, version 6.18.4-surface-1
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.18.4-surface-1.
+
 Package: linux-image-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -3819,20 +3856,20 @@ Description: Linux kernel, version 6.9.9-surface-1
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 6.18.3-surface-2
+Version: 6.18.4-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-6.18.3-surface-2 (= 6.18.3-surface-2)
+Depends: linux-image-6.18.4-surface-1 (= 6.18.4-surface-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-image-surface_6.18.3-surface-2_amd64.deb
+Filename: pool/main/l/linux-surface/linux-image-surface_6.18.4-surface-1_amd64.deb
 Size: 2466
-SHA256: 5b0f209b82e950cedcd38d2460d2fde486d581df862a9193e1cc326128adb0fe
-SHA1: c84eae499fc8fb043ab098a5fba47cfb488f7743
-MD5sum: 61b31fb64bccdc2afacff1daee69c19a
+SHA256: 6e7e3f27a06cf774d1f1f6874101c8890e4cba5b117869efc8e7162bb6af4229
+SHA1: 5e076fce20225efaea1059e8c289f54de04615f1
+MD5sum: 4a76025603d4efd93d4954e1e9d8b935
 Description:
   Meta-package for linux-surface kernel images.
 
