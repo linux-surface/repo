@@ -763,25 +763,6 @@ Description: Linux kernel headers for 5.19.6-surface on amd64
  .
  This is useful for people who need to build external modules
 
-Package: linux-headers-5.19.7-surface
-Source: linux-upstream
-Version: 5.19.7-surface-1
-Architecture: amd64
-Maintainer: root <root@3e0014b38406>
-Installed-Size: 51790
-Homepage: https://www.kernel.org/
-Priority: optional
-Section: misc
-Filename: pool/main/l/linux-upstream/linux-headers-5.19.7-surface_5.19.7-surface-1_amd64.deb
-Size: 8809012
-SHA256: 5a4f9f25c58e27c2506242502bcf587e5432d0fc857b7da4262a3678fee60e85
-SHA1: f14439f17015fa43fe4752edaea6d0e36c599f4b
-MD5sum: d9272545c40b1032f47c95ccb3e5f3c5
-Description: Linux kernel headers for 5.19.7-surface on amd64
- This package provides kernel header files for 5.19.7-surface on amd64
- .
- This is useful for people who need to build external modules
-
 Package: linux-headers-6.0.1-surface
 Source: linux-upstream
 Version: 6.0.1-surface-1
