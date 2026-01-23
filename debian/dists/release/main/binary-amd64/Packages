@@ -1390,6 +1390,25 @@ Description: Linux kernel headers for 6.18.4-surface-1 on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-6.18.5-surface-1
+Source: linux-upstream
+Version: 6.18.5-surface-1
+Architecture: amd64
+Maintainer: root <root@86e0f9dda9d0>
+Installed-Size: 61877
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-headers-6.18.5-surface-1_6.18.5-surface-1_amd64.deb
+Size: 11279674
+SHA256: b01769e4c8096f59b0a7e1301e619d848c5fc4f6967a7fe867d89d662442076a
+SHA1: 753bf805643165d8a06d6774464250fe59baae9c
+MD5sum: 1bd08b8f2e431df8344f72de71c00bdd
+Description: Linux kernel headers for 6.18.5-surface-1 on amd64
+ This package provides kernel header files for 6.18.5-surface-1 on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -2019,19 +2038,19 @@ Description: Linux kernel headers for 6.9.9-surface-1 on amd64
 
 Package: linux-headers-surface
 Source: linux-surface
-Version: 6.18.4-surface-1
+Version: 6.18.5-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-6.18.4-surface-1 (= 6.18.4-surface-1)
+Depends: linux-headers-6.18.5-surface-1 (= 6.18.5-surface-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-headers-surface_6.18.4-surface-1_amd64.deb
-Size: 2454
-SHA256: 8e9a44d539a6fb02421bff258bf1ed9d670c61b02d6f6cafd9ebe2d2d7b8fbef
-SHA1: 689d480aa804ae3a25755510297cc4ad50a990b4
-MD5sum: 428793574daf8e823d42f008a681894b
+Filename: pool/main/l/linux-surface/linux-headers-surface_6.18.5-surface-1_amd64.deb
+Size: 2458
+SHA256: 32ddd2664fd66ed25b7efc2d599a2d78cd230e1538c2b085d7a821978442464d
+SHA1: 9d1c2a09708ff4a167c5ca466d5447d0c23ac597
+MD5sum: 9cb43a669180e62c3149cb1d18afe0ba
 Description:
   Meta-package for linux-surface headers.
 
@@ -3223,6 +3242,24 @@ Description: Linux kernel, version 6.18.4-surface-1
  This package contains the Linux kernel, modules and corresponding other
  files, version: 6.18.4-surface-1.
 
+Package: linux-image-6.18.5-surface-1
+Source: linux-upstream
+Version: 6.18.5-surface-1
+Architecture: amd64
+Maintainer: root <root@86e0f9dda9d0>
+Installed-Size: 492829
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-image-6.18.5-surface-1_6.18.5-surface-1_amd64.deb
+Size: 92529854
+SHA256: 7810848c1745cc0a23c9c0553c585f5e2d11e5daadfb80761d0aa59ff0e359a5
+SHA1: 95ec502fb372e6f00450511fcb0ec58e4303a4fd
+MD5sum: a777e103e63805745fc90eeaa3ced853
+Description: Linux kernel, version 6.18.5-surface-1
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.18.5-surface-1.
+
 Package: linux-image-6.2.1-surface
 Source: linux-upstream
 Version: 6.2.1-surface-1
@@ -3837,20 +3874,20 @@ Description: Linux kernel, version 6.9.9-surface-1
 
 Package: linux-image-surface
 Source: linux-surface
-Version: 6.18.4-surface-1
+Version: 6.18.5-surface-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-6.18.4-surface-1 (= 6.18.4-surface-1)
+Depends: linux-image-6.18.5-surface-1 (= 6.18.5-surface-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-image-surface_6.18.4-surface-1_amd64.deb
-Size: 2466
-SHA256: 6e7e3f27a06cf774d1f1f6874101c8890e4cba5b117869efc8e7162bb6af4229
-SHA1: 5e076fce20225efaea1059e8c289f54de04615f1
-MD5sum: 4a76025603d4efd93d4954e1e9d8b935
+Filename: pool/main/l/linux-surface/linux-image-surface_6.18.5-surface-1_amd64.deb
+Size: 2470
+SHA256: b60521e36a3c0810aeff397fab573e38c2ccfa7e8699fd41252b24db1877738a
+SHA1: 2390bf803df1fec4622bc0dcd033666134ff062e
+MD5sum: e704ba8e75e2dcb1685bd95810778652
 Description:
   Meta-package for linux-surface kernel images.
 
