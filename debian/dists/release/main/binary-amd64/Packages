@@ -554,21 +554,40 @@ Description: Linux kernel headers for 6.18.7-surface-1 on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-6.19.8-surface-2
+Source: linux-upstream
+Version: 6.19.8-surface-2
+Architecture: amd64
+Maintainer: root <root@c76c9cc838e0>
+Installed-Size: 62481
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-headers-6.19.8-surface-2_6.19.8-surface-2_amd64.deb
+Size: 11389898
+SHA256: 49c813ebfbb667ef9e8a016d5dcef4ae19ea03b989d58459e75630132f6dfd90
+SHA1: af4aadc1c74018b653520e477598f9ab074213f1
+MD5sum: d32dc12f54bce5cb27a4242f3830dab0
+Description: Linux kernel headers for 6.19.8-surface-2 on amd64
+ This package provides kernel header files for 6.19.8-surface-2 on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-surface
 Source: linux-surface
-Version: 6.18.7-surface-1
+Version: 6.19.8-surface-2
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-6.18.7-surface-1 (= 6.18.7-surface-1)
+Depends: linux-headers-6.19.8-surface-2 (= 6.19.8-surface-2)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-headers-surface_6.18.7-surface-1_amd64.deb
-Size: 2462
-SHA256: b2baf5d3302e75ec2e0b510e23be5c7571719bcc5a25d8a823a4540603f3306a
-SHA1: 9ae8c0a6e388f385aed18e27e972c03d4c7d87be
-MD5sum: a8a43e3d02d51f7f87664a405ef1ed42
+Filename: pool/main/l/linux-surface/linux-headers-surface_6.19.8-surface-2_amd64.deb
+Size: 2458
+SHA256: 2eb7cf78ba7927a399dc875e56396c715de6ece0676ea1457ea37274dddd5f53
+SHA1: 3deb1bd583b40d84165c361b6be2ee19bde16143
+MD5sum: 5ce8cae048ee9bcaa9dec840d9063127
 Description:
   Meta-package for linux-surface headers.
 
@@ -607,24 +626,6 @@ MD5sum: 0f344c745b2c0e95dea1ef258fa37bf3
 Description: Linux kernel, version 6.10.3-surface-1
  This package contains the Linux kernel, modules and corresponding other
  files, version: 6.10.3-surface-1.
-
-Package: linux-image-6.10.5-surface-1
-Source: linux-upstream
-Version: 6.10.5-surface-1
-Architecture: amd64
-Maintainer: root <root@bbae04cf9b8e>
-Installed-Size: 454761
-Homepage: https://www.kernel.org/
-Priority: optional
-Section: misc
-Filename: pool/main/l/linux-upstream/linux-image-6.10.5-surface-1_6.10.5-surface-1_amd64.deb
-Size: 86645982
-SHA256: d89d3440738d7d8eb3bc89d2ae39af79203d5e70c4856c4f7bdc02630ccfc3e0
-SHA1: 2b2c3ab538e49b538ed860a7619abc912a8e097c
-MD5sum: f59570dd1568ac775ab8a542201910c4
-Description: Linux kernel, version 6.10.5-surface-1
- This package contains the Linux kernel, modules and corresponding other
- files, version: 6.10.5-surface-1.
 
 Package: linux-image-6.12.3-surface-1
 Source: linux-upstream
@@ -932,39 +933,42 @@ Description: Linux kernel, version 6.18.7-surface-1
  This package contains the Linux kernel, modules and corresponding other
  files, version: 6.18.7-surface-1.
 
+Package: linux-image-6.19.8-surface-2
+Source: linux-upstream
+Version: 6.19.8-surface-2
+Architecture: amd64
+Maintainer: root <root@c76c9cc838e0>
+Installed-Size: 500267
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-image-6.19.8-surface-2_6.19.8-surface-2_amd64.deb
+Size: 93710342
+SHA256: 53cdf809a8af51478216701ac392107434e620ce0955925d5c7b08a6bb51fe00
+SHA1: da6ce1bffccf727fdd703fa5cb02600e92d7058e
+MD5sum: 7e154867a2041689809299b53bd392f1
+Description: Linux kernel, version 6.19.8-surface-2
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.19.8-surface-2.
+
 Package: linux-image-surface
 Source: linux-surface
-Version: 6.18.7-surface-1
+Version: 6.19.8-surface-2
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-6.18.7-surface-1 (= 6.18.7-surface-1)
+Depends: linux-image-6.19.8-surface-2 (= 6.19.8-surface-2)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-image-surface_6.18.7-surface-1_amd64.deb
-Size: 2474
-SHA256: 45a76046aeb18ee1905283355ef36864e3c45d6e33c3aa0feddbc77378350469
-SHA1: f9bffc3ffebcf12a60e94ad86ec76708ccbe6f43
-MD5sum: 7bcb934ec8df938aaadcf603ee3994b8
+Filename: pool/main/l/linux-surface/linux-image-surface_6.19.8-surface-2_amd64.deb
+Size: 2466
+SHA256: 53b99eb4901f43346adb0932adf83371d99888b5d9f6a37eae09e1530bbd3f7d
+SHA1: bc8c96622682a307791f6d5dbcb4198f2ae89db4
+MD5sum: c57424258c15be5b1b7a28ae13c00ed8
 Description:
   Meta-package for linux-surface kernel images.
-
-Package: linux-surface-secureboot-mok
-Version: 20251230-1
-Architecture: amd64
-Maintainer: Maximilian Luz <luzmaximilian@gmail.com>
-Installed-Size: 18
-Depends: mokutil, grep
-Priority: optional
-Section: misc
-Filename: pool/main/l/linux-surface-secureboot-mok/linux-surface-secureboot-mok_20251230-1_amd64.deb
-Size: 5508
-SHA256: faf4d02e51fa2514a0212b9746bdc2b12e831a3068727e79b57c9472581f3231
-SHA1: b7cd4a582677e3dd41b157c672fc250f47ea7792
-MD5sum: 147718cb611ad316894594ab818cbc81
-Description: Secure-boot machine owner key for linux-surface kernels
 
 Package: surface-control
 Version: 0.5.0-1
