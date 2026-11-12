@@ -1,19 +1,19 @@
 Origin: com.github.linux-surface.linux-surface
 Label: linux-surface
 Codename: release
-Date: Tue, 03 Nov 2026 04:53:09 UTC
+Date: Thu, 12 Nov 2026 05:18:06 UTC
 Architectures: amd64
 Components: main
 Description: APT repository for linux-surface
 MD5Sum:
- 6ef21642262ec97c81d69c3875057871 47217 main/binary-amd64/Packages
- c106cdb008db33cc2b23f1876fdd406f 9800 main/binary-amd64/Packages.gz
+ b6e885788142347e0e5a5c7e2b2602dd 48534 main/binary-amd64/Packages
+ 682de3f38582ed1b343a03df542154ff 10069 main/binary-amd64/Packages.gz
  15ab90745e7c52aee5b806236c34ac2a 150 main/binary-amd64/Release
 SHA1:
- 6e64f90cf7356ecbd9d9be04ac8e694c07c158f4 47217 main/binary-amd64/Packages
- 925727ccab7885c370897163d1c6b70e97b9ed71 9800 main/binary-amd64/Packages.gz
+ 31f15775e77da186293eb84d9ffa906f1893ceee 48534 main/binary-amd64/Packages
+ 50b2554001c917302938b4734b0d91d83cb3a5b0 10069 main/binary-amd64/Packages.gz
  dacb6eb20dd4d3620ac83380078a85fa95226d17 150 main/binary-amd64/Release
 SHA256:
- 68d8269180dca45f788a74d2095fa9c35120a7d55e0cd5f68147323e5d92f247 47217 main/binary-amd64/Packages
- d4f982b60b40df459f8be43129cb4fa953999b94eb8ac84539e9a112c5c60e83 9800 main/binary-amd64/Packages.gz
+ caef631fcebc9a9d2e6d2202f855ce4c9c38e86232c68e2dd2676fd3e653b1f9 48534 main/binary-amd64/Packages
+ e8cc50eebe0e328d442722b45277703830799ae77db214bd41fa832ea2d8f92b 10069 main/binary-amd64/Packages.gz
  cebcefab064213b3eb64a98c1836a7fd496be058d1ea40de050bb9c2e5db5770 150 main/binary-amd64/Release

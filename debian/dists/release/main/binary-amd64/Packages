@@ -687,21 +687,40 @@ Description: Linux kernel headers for 7.2.15-1-surface on amd64
  .
  This is useful for people who need to build external modules
 
+Package: linux-headers-7.3.3-1-surface
+Source: linux-upstream
+Version: 7.3.3-1
+Architecture: amd64
+Maintainer: root <root@e95a0f950a5a>
+Installed-Size: 65352
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-headers-7.3.3-1-surface_7.3.3-1_amd64.deb
+Size: 11751554
+SHA256: c5423f6f6fe1eac47a9df89a8a3f40fbed15dda64dd0a681ff5bf93312bfca44
+SHA1: 1af832f59c25b24efe9682f11a90e2e65839fbbf
+MD5sum: 842f433f7aa3c1723d8184d8ca935904
+Description: Linux kernel headers for 7.3.3-1-surface on amd64
+ This package provides kernel header files for 7.3.3-1-surface on amd64
+ .
+ This is useful for people who need to build external modules
+
 Package: linux-headers-surface
 Source: linux-surface
-Version: 7.2.15-1
+Version: 7.3.3-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-headers-7.2.15-1-surface (= 7.2.15-1)
+Depends: linux-headers-7.3.3-1-surface (= 7.3.3-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-headers-surface_7.2.15-1_amd64.deb
+Filename: pool/main/l/linux-surface/linux-headers-surface_7.3.3-1_amd64.deb
 Size: 2454
-SHA256: 337d8aeab68be45110f626475bff583f1b0e46f9768ea310994fe85742b76cfc
-SHA1: dd57e7d63b481aca1f48873b6aff7cb030772019
-MD5sum: 7272ab72438a351efea87e1c1a7457e7
+SHA256: 8ab6bd671577501fa62b53120e45a6c873e5393ae659dedfb808557d41e8727d
+SHA1: 44f1e6759a1314d75fb18db95e36b0514da3e32a
+MD5sum: ce6aa826793d3a77abd7552b61a1259f
 Description:
   Meta-package for linux-surface headers.
 
@@ -1173,39 +1192,57 @@ Description: Linux kernel, version 7.2.15-1-surface
  This package contains the Linux kernel, modules and corresponding other
  files, version: 7.2.15-1-surface.
 
+Package: linux-image-7.3.3-1-surface
+Source: linux-upstream
+Version: 7.3.3-1
+Architecture: amd64
+Maintainer: root <root@e95a0f950a5a>
+Installed-Size: 515527
+Homepage: https://www.kernel.org/
+Priority: optional
+Section: misc
+Filename: pool/main/l/linux-upstream/linux-image-7.3.3-1-surface_7.3.3-1_amd64.deb
+Size: 96554814
+SHA256: 62a7ac2e911eefbe24369866856338ed530cceaadd3b367c8c5f1c3c5c3b81a6
+SHA1: 204319ac3eb9bcbcfefa2a1a19eb8657d6166db4
+MD5sum: acc131cc682e582aa1ddeb762d772f3b
+Description: Linux kernel, version 7.3.3-1-surface
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 7.3.3-1-surface.
+
 Package: linux-image-surface
 Source: linux-surface
-Version: 7.2.15-1
+Version: 7.3.3-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-7.2.15-1-surface (= 7.2.15-1)
+Depends: linux-image-7.3.3-1-surface (= 7.3.3-1)
 Recommends: iptsd
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-image-surface_7.2.15-1_amd64.deb
-Size: 2470
-SHA256: f0f7fdf27fbc1c0477e634706578a08e2374c0861ba67137ff597aa253de7ac0
-SHA1: fa1310dc8c9183ec1b8f5c6c7194357d08e6ce8f
-MD5sum: da59bc744e3731e6019dd90d208e974f
+Filename: pool/main/l/linux-surface/linux-image-surface_7.3.3-1_amd64.deb
+Size: 2462
+SHA256: f35f8f756b1c6804beb21c2d0c9ba499aede144088b49b5e460d63bb2d647c49
+SHA1: 7528d79f52410e1f43b310adbff14f4606b8991d
+MD5sum: 8ff78ded10f6941d7500a5de7826f0f2
 Description:
   Meta-package for linux-surface kernel images.
 
 Package: linux-surface
-Version: 7.2.15-1
+Version: 7.3.3-1
 Architecture: amd64
 Maintainer: surfacebot <surfacebot@users.noreply.github.com>
 Installed-Size: 7
-Depends: linux-image-surface (= 7.2.15-1), linux-headers-surface (= 7.2.15-1)
+Depends: linux-image-surface (= 7.3.3-1), linux-headers-surface (= 7.3.3-1)
 Homepage: https://github.com/linux-surface/linux-surface
 Priority: optional
 Section: misc
-Filename: pool/main/l/linux-surface/linux-surface_7.2.15-1_amd64.deb
-Size: 2458
-SHA256: d6aa9a93719804e327d427296dee33e5f2ee36886e3cd2ca5a6d4b7cc768496c
-SHA1: 13e0dccced1496b8f88486b0d9e169dd7e4ea27d
-MD5sum: a4667bb959a5d182daef29336d164dc6
+Filename: pool/main/l/linux-surface/linux-surface_7.3.3-1_amd64.deb
+Size: 2450
+SHA256: cedb9754ae47de1d0fc7de551fdf19b41c82036f7e697fc20d82d6d98eb1ab19
+SHA1: 4fe42256f990758ae3ec95e3b3fb0c3bcb00ae8d
+MD5sum: 6ecf90eb88988c7b6265c6643e51d7b6
 Description:
   Meta-package for the linux-surface kernel image and headers.
 
